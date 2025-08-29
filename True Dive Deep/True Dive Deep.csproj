@@ -7,4 +7,12 @@
     <RootNamespace>True_Dive_Deep</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Models\Equipment.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Persistence\NewFile.txt" />
+  </ItemGroup>
+
 </Project>

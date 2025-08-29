@@ -1,29 +1,94 @@
 ﻿<!DOCTYPE html>
-
-
 <html lang="en">
 
 <head>
     <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.css"/>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Dive Deep</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #0d47a1, #42a5f5);
+            min-height: 100vh;
+            margin: 0;
+            color: white;
+        }
+        .rounded-navbar {
+            border-radius: 20px;
+            margin: 16px;
+            /* Optional: add a box-shadow for effect */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        footer {
+            overflow: hidden;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            color: white;
+            padding: 10px 0;
+            background: radial-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2));
+        }
 
 
+    </style>
 </head>
 
 <body>
+    <header>
+        <div style="background-color: #004080; color: white; padding: 5px 10px; font-size: 0.9rem; text-align: center;">
+            Afhentning i butik muligt – bestil online og hent samme dag!
+        </div>
+
+
+        <nav class="navbar navbar-expand-lg bg-primary rounded-navbar w-100" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">
+                    <img src="~/lib/images/Dive Deep Logo.png" alt="Logo" width="40" height="40" border-radius="5" class="d-inline-block align-top"/>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0" justify-content="center">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/Home/index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Equipment/index">Produkter</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                        </li>
+                    </ul>
+                  
+                </div>
+            </div>
+        </nav>
+    </header>
 
     <div class="container">
-        
         @RenderSection("Title", required: false)
         @RenderBody()
-
     </div>
 
+    <footer>
+        Adresse: Dykkervej 10, 5000 Odense C
+        CVR-nummer: 81828384
+        Telefonnummer: +45 60708090 E-mail: info@divedeep.dk
+        © 2025 Dive Deep
+    </footer>
 </body>
-
 </html>

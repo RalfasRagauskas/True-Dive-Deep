@@ -1,7 +1,46 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dive Deep</title>
+
+    <style>
+
+        .search-bar {
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 35px;
+        }
+
+            .search-bar input {
+                padding: 6px 10px;
+                border-radius: 20px;
+                border: none;
+                outline: none;
+            }
+
+    </style>
+   
+    </head>
 
 <h1>Her kan du se vores udstyr til leje</h1>
+
+<div class="search-bar">
+    <img src="add-to-cart.png" alt="Cart" class="icon" style="margin-right: 10px;">
+    <input type="text" placeholder="Søg">
+</div>
+
+<div>
+    <label for="Sort">Sorter efter:</label>
+    <select name="sort" id="sort">
+        <option value="Newest">Nyeste</option>
+        <option value="Most popular">Populære</option>
+        <option value="Low-to-high">Billigst til dyrest</option>
+        <option value="High-to-low">Dyrest til billigst</option>
+    </select>
+
+
+</div>
