@@ -1,0 +1,26 @@
+﻿@using True_Dive_Deep.Models
+@model List<BCD>
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="row">
+    @foreach (var bcd in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card h-100" style="width: 18rem;">
+                <img src="~/lib/images/@(bcd.Model.Replace(" ", "").ToLower()).jpg" class="card-img-top" alt="@bcd.Model" />
+                <div class="card-body">
+                    <h5 class="card-title">Model: @bcd.Model</h5>
+                    <p class="card-text">
+                        Mærke: @bcd.Brand<br />
+                        Størrelser: @string.Join(", ", bcd.Sizes)<br />
+                        Pris pr. dag: @bcd.PricePerDay kr<br />
+                    </p>
+                    <a href="#" class="btn btn-primary">Se mere</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

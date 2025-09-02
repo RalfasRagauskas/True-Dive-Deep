@@ -16,7 +16,7 @@
         .rounded-navbar {
             border-radius: 20px;
             margin: 16px;
-            /* Optional: add a box-shadow for effect */
+           
             box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         }
 
@@ -31,18 +31,21 @@
             background: radial-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2));
         }
 
-
     </style>
 </head>
 
 <body>
     <header>
-        <div style="background-color: #004080; color: white; padding: 5px 10px; font-size: 0.9rem; text-align: center;">
+        <div id="topBanner" style="background-color: yellowgreen; color: white; padding: 5px 10px; font-size: 0.9rem; text-align: center; position: relative;">
             Afhentning i butik muligt – bestil online og hent samme dag!
+            <button onclick="document.getElementById('topBanner').style.display='none';"
+                    style="position: absolute; right: 5px; top:0px; background: black; border: none; color: white; font-size: 1.2rem; cursor: pointer;">
+                &times;
+            </button>
         </div>
 
 
-        <nav class="navbar navbar-expand-lg bg-primary rounded-navbar w-100" data-bs-theme="dark">
+        <nav class="navbar navbar-expand-lg bg-primary rounded-navbar w-90" data-bs-theme="dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="/">
                     <img src="~/lib/images/Dive Deep Logo.png" alt="Logo" width="40" height="40" border-radius="5" class="d-inline-block align-top"/>
@@ -51,12 +54,19 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0" justify-content="center">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="/Home/index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/Equipment/index">Produkter</a>
+                            <a class="nav-link" href="/Equipment/index">Udstyrsside</a>
+                        </li>
+                     
+                        <li class="nav-item">
+                            <a class="nav-link" href="/MyAccount/index">Min Konto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Information/index">Information</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -69,15 +79,19 @@
                                 <li><a class="dropdown-item" href="#">Something else here</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                        </li>
+                       
                     </ul>
+                    <a href="Cart/Index" style="text-align: center; width: 40px; cursor: pointer;">
+                        <img src="/lib/Images/shopping-cart.png" alt="Cart" style="width:32px; height:32px; display: block; margin: 0 auto;">
+                        <span style="font-size: 12px; font-weight:bold color: white;">Se kurv</span>
+                    </a>
+
                   
                 </div>
             </div>
         </nav>
     </header>
+    
 
     <div class="container">
         @RenderSection("Title", required: false)

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -12,7 +12,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Controllers\NewFile.txt" />
     <None Remove="Persistence\NewFile.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Mask Snorkel\" />
+    <Folder Include="Views\DivingSuit\" />
+    <Folder Include="Views\Fin\" />
+    <Folder Include="Views\MyAccount\" />
+    <Folder Include="Views\RegulatorSet\" />
+    <Folder Include="Views\Tank\" />
   </ItemGroup>
 
 </Project>
