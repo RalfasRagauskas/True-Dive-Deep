@@ -1,0 +1,28 @@
+﻿@using True_Dive_Deep.Models
+@model List<DivingSuit>
+@{
+    Layout = "_Layout";
+}
+
+<div class="row">
+    @foreach (var divingSuit in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card h-100" style="width: 18rem;">
+                <img src="~/lib/images/@(divingSuit.Model.Replace(" ", "").ToLower()).jpg" class="card-img-top" alt="@divingSuit.Model" />
+                <div class="card-body">
+                    <h5 class="card-title">Model: @divingSuit.Model</h5>
+                    <p class="card-text">
+                        Mærke: @divingSuit.Brand<br />
+                        Størrelser: @string.Join(", ", divingSuit.Sizes)<br />
+                        Type: @divingSuit.Type<br />
+                        Køn: @divingSuit.Gender<br />
+                        Tykkelse: @divingSuit.Thickness mm<br />
+                        Pris pr. dag: @divingSuit.PricePerDay kr<br />
+                    </p>
+                    <a href="#" class="btn btn-primary">Se mere</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

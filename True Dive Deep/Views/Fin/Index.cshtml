@@ -1,0 +1,25 @@
+﻿@using True_Dive_Deep.Models
+@model List<Fin>
+@{
+    Layout = "_Layout";
+}
+
+<div class="row">
+    @foreach (var fin in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card h-100" style="width: 18rem;">
+                <img src="~/lib/images/@(fin.Model.Replace(" ", "").ToLower()).jpg" class="card-img-top" alt="@fin.Model" />
+                <div class="card-body">
+                    <h5 class="card-title">Model: @fin.Model</h5>
+                    <p class="card-text">
+                        Mærke: @fin.Brand<br />
+                        Størrelser: @string.Join(", ", fin.Sizes)<br />
+                        Pris pr. dag: @fin.PricePerDay kr<br />
+                    </p>
+                    <a href="#" class="btn btn-primary">Se mere</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

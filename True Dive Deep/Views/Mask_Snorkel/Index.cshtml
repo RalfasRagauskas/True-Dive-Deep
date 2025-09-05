@@ -1,0 +1,23 @@
+﻿@using True_Dive_Deep.Models
+@model List<Mask_Snorkel>
+@{
+    Layout = "_Layout";
+}
+<div class="row">
+    @foreach (var mask_snorkel in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card h-100" style="width: 18rem;">
+                <img src="~/lib/images/@(mask_snorkel.Model.Replace(" ", "").ToLower()).jpg" class="card-img-top" alt="@mask_snorkel.Model" />
+                <div class="card-body">
+                    <h5 class="card-title">Model: @mask_snorkel.Model</h5>
+                    <p class="card-text">
+                        Mærke: @mask_snorkel.Brand<br />
+                        Pris pr. dag: @mask_snorkel.PricePerDay kr<br />
+                    </p>
+                    <a href="#" class="btn btn-primary">Se mere</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

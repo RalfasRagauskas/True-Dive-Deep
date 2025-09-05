@@ -1,0 +1,26 @@
+﻿@using True_Dive_Deep.Models
+@model List<RegulatorSet>
+@{
+    Layout = "_Layout";
+}
+<div class="row">
+    @foreach (var regulatorSet in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card h-100" style="width: 18rem;">
+                <img src="~/lib/images/@(regulatorSet.Brand.Replace(" ", "").ToLower()).jpg" class="card-img-top" alt="@regulatorSet.Brand" />
+                <div class="card-body">
+                    <h5 class="card-title">Mærke: @regulatorSet.Brand</h5>
+                    <p class="card-text">
+                        Mærke: @regulatorSet.Brand<br />
+                        1.Trin: @regulatorSet.StepOne<br />
+                        2.Trin: @regulatorSet.StepTwo<br />
+                        Octopus: @regulatorSet.Octopus<br />
+                        Pris pr. dag: @regulatorSet.PricePerDay kr<br />
+                    </p>
+                    <a href="#" class="btn btn-primary">Se mere</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

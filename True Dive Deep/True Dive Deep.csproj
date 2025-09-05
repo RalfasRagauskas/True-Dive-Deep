@@ -18,11 +18,7 @@
 
   <ItemGroup>
     <Folder Include="Views\Mask Snorkel\" />
-    <Folder Include="Views\DivingSuit\" />
-    <Folder Include="Views\Fin\" />
     <Folder Include="Views\MyAccount\" />
-    <Folder Include="Views\RegulatorSet\" />
-    <Folder Include="Views\Tank\" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,50 @@
+﻿using True_Dive_Deep.Models;
+
+namespace True_Dive_Deep.Persistence
+{
+    public static class RegulatorSetRepo
+    {
+        private static readonly List<RegulatorSet> regulatorSets = new List<RegulatorSet>
+        {
+            new RegulatorSet
+            {
+                RegulatorSetId = 1,
+                Brand = "Scubapro",
+                StepOne = "MK25EVO",
+                StepTwo = "S600",
+                Octopus = "R105",
+                PricePerDay = 125
+            },
+            new RegulatorSet
+            {
+                RegulatorSetId = 2,
+                Brand = "Scubapro",
+                StepOne = "MK17EVO",
+                StepTwo = "C370",
+                Octopus = "R095",
+                PricePerDay = 100
+            },
+            new RegulatorSet
+            {
+                RegulatorSetId = 3,
+                Brand = "Scubapro",
+                StepOne = "MK25EVO BT",
+                StepTwo = "A700 Carbon BT",
+                Octopus = "S270",
+                PricePerDay = 150
+            }
+        };
+        public static List<RegulatorSet> GetAll()
+        {
+            return regulatorSets;
+        }
+        public static RegulatorSet? GetById(int id) => regulatorSets.Find(r => r.RegulatorSetId == id);
+        public static void Add(RegulatorSet regulatorSet)
+        {
+            if (regulatorSet == null) return;
+            regulatorSet.RegulatorSetId = regulatorSets.Count > 0 ? regulatorSets[^1].RegulatorSetId + 1 : 1;
+            regulatorSets.Add(regulatorSet);
+        }
+        public static void Delete(int id) => regulatorSets.RemoveAll(r => r.RegulatorSetId == id);
+    }
+}

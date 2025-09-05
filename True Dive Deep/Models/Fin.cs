@@ -2,9 +2,11 @@
 {
     public enum FinSize
     {
+        XS,
         S,
         M,
-        L
+        L,
+        XL
     }
     public class Fin
     {
