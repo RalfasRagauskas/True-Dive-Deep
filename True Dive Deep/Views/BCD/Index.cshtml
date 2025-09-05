@@ -15,11 +15,18 @@
                     <h5 class="card-title">Model: @bcd.Model</h5>
                     <p class="card-text">
                         Mærke: @bcd.Brand<br />
-                        Størrelser: @string.Join(", ", bcd.Sizes)<br />
                         Pris pr. dag: @bcd.PricePerDay kr<br />
                     </p>
-                    <a href="#" class="btn btn-primary">Se mere</a>
+                    <select class="Selected-size" aria-label="Vælg størrelse">
+                        <option selected>Vælg størrelse</option>
+                        @foreach (var size in bcd.Sizes)
+                        {
+                            <option value="@size">@size</option>
+                        }
+                    </select>
                 </div>
+                 <div class="card-footer1"><a href="#" class="btn btn-primary">Tilføj til Kurv</a> 
+                </div><div class="card-footer2"><a href="#" class="btn btn-primary">Se Mere</a></div>
             </div>
         </div>
     }
