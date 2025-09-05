@@ -57,6 +57,7 @@
 
         </body>
 
+<ul class="cards list-unstyled">
 <div class="card" style="width: 18rem;">
     <img src="~/lib/images/navigator lite blue.jpg" class="BCD" alt="...">
     <div class="card-body">
@@ -110,3 +111,17 @@
         <a href="#" class="btn btn-primary">Go somewhere</a>
     </div>
 </div>
+</ul>
+<style>
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+
+    .card {
+        border: 1px solid #ddd;
+        padding: 1rem;
+        border-radius: 8px;
+    }
+</style>
