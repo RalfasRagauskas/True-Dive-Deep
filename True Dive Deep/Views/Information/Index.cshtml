@@ -1,34 +1,122 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "Information";
 }
 
-<h1>Information om FAQ </h1>
+<style>
+    .information-page {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 40px;
+        border-radius: 10px;
+        margin: 40px auto;
+        max-width: 900px;
+        color: white;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+        .information-page h1 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .information-page p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .information-page section {
+            margin-bottom: 30px;
+        }
+
+        .information-page h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #ffdd57;
+        }
+
+    
+    .container-Write-Message {
+        background-color: rgba(255,255,255,0.1);
+        padding: 30px;
+        border-radius: 10px;
+        max-width: 900px;
+        margin: 40px auto;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+        .container-Write-Message input,
+        .container-Write-Message select,
+        .container-Write-Message textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+        }
+
+            .container-Write-Message input[type="submit"] {
+                background-color: #ffdd57;
+                color: #000;
+                font-weight: bold;
+                cursor: pointer;
+            }
+
+   .container-Write-Message h5 {
+
+       
+        font-size: 36px;
+        text-align: center;
+        margin-bottom: 30px;
 
 
-<p>Generel information om Dive Deep </p>
+   }
+</style>
 
-<div class="container">
-    <form action="action_page.php">
+<div class="container information-page">
+    <h1>Om Dive Deep</h1>
+    <p>Velkommen til Dive Deep! Vi tilbyder kvalitetsdykkerudstyr og rådgivning. Her kan du lære mere om vores mission, værdier og butikker.</p>
 
-        <label for="fname">First Name</label>
-        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+    <section class="mission">
+        <h2>Vores Mission</h2>
+        <p>Vi tilbyder kvalitetsdykkerudstyr og rådgivning, så alle kan dykke sikkert og med glæde.</p>
+    </section>
 
-        <label for="lname">Last Name</label>
-        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+    <section class="values">
+        <h2>Vores Værdier</h2>
+        <p>Professionalisme, bæredygtighed og kundetilfredshed er vores kerneværdier.</p>
+    </section>
+
+    <section class="stores">
+        <h2>Vores Butikker</h2>
+        <p>Vi har flere butikker i Danmark, hvor du kan hente dit udstyr samme dag.</p>
+    </section>
+</div>
+
+
+
+
+<div class="container-Write-Message">
+    <h5>Skriv en besked til os her!</h5>
+    <form action="#">
+        <label for="fname">Fornavn</label>
+        <input type="text" id="fname" name="firstname" placeholder="Dit fornavn..">
+
+        <label for="lname">Efternavn</label>
+        <input type="text" id="lname" name="lastname" placeholder="Dit efternavn..">
+
+        <label for="PhoneNumber">Telefon</label>
+        <input type="text" id="PhoneNumber" placeholder="">
 
         <label for="country">Country</label>
         <select id="country" name="country">
-            <option value="australia">Australia</option>
-            <option value="canada">Canada</option>
-            <option value="usa">USA</option>
+            <option value="australia">Danmark</option>
+           
         </select>
 
-        <label for="subject">Subject</label>
-        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+        <label for="subject">Emne</label>
+        <textarea id="subject" name="subject" placeholder="Skriv her.." style="height:200px"></textarea>
 
-        <input type="submit" value="Submit">
-
+        <input type="submit" value="Indsend">
     </form>
 </div>
