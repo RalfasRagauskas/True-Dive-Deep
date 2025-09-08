@@ -1,0 +1,96 @@
+﻿@{
+    ViewData["Title"] = "Account";
+}
+
+
+
+<style>
+
+    .account-page h1 {
+        color: #fff;
+        font-weight: 700;
+    }
+
+    .account-page p {
+        color: #e0e0e0;
+    }
+
+    .account-page .card {
+        border-radius: 15px;
+        background: linear-gradient(135deg, #1a3a5a, #2b5d8c);
+        color: white;
+    }
+
+    .account-page .form-label {
+        color: #fff;
+    }
+
+    .account-page .form-control {
+        border-radius: 10px;
+        background-color: rgba(255,255,255,0.1);
+        color: #fff;
+        border: none;
+    }
+
+        .account-page .form-control::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+
+
+
+
+</style>
+
+
+
+
+<div class="account-page container py-5">
+    <h1 class="text-center mb-4">Velkommen til Min Konto</h1>
+    <p class="text-center mb-5">Opret en ny bruger eller log ind for at fortsætte.</p>
+
+    <div class="row justify-content-center">
+        
+        <div class="col-md-5 mb-4">
+            <div class="card p-4 shadow-sm">
+                <h3 class="mb-3">Opret Bruger</h3>
+                <form>
+                    <div class="mb-3">
+                        <label for="fullname" class="form-label">Fulde navn</label>
+                        <input type="text" class="form-control" id="fullname" placeholder="Dit navn">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Din email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Telefon</label>
+                        <input type="tel" class="form-control" id="phone" placeholder="Dit telefonnummer">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Adgangskode</label>
+                        <input type="password" class="form-control" id="password" placeholder="Adgangskode">
+                    </div>
+                    <button type="submit" class="login-btn w-100">Opret Bruger</button>
+                </form>
+            </div>
+        </div>
+
+    
+        <div class="col-md-5 mb-4">
+            <div class="card p-4 shadow-sm">
+                <h3 class="mb-3">Log Ind</h3>
+                <form>
+                    <div class="mb-3">
+                        <label for="loginEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="loginEmail" placeholder="Din email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="loginPassword" class="form-label">Adgangskode</label>
+                        <input type="password" class="form-control" id="loginPassword" placeholder="Adgangskode">
+                    </div>
+                    <button type="submit" class="login-btn w-100">Log Ind</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
