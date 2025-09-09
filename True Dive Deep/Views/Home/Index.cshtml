@@ -1,16 +1,4 @@
 ﻿
-<h1>Velkommen til Deep Dive</h1>
-
-<div class="scubadiver">
-    <img src="~/lib/Images/scubadiver.jpg" alt="frontpage image" class="scubaimage">
-    <div class="scubatext">
-        <p>
-            Oplev en verden af spændende dykkeroplevelser med os!<br>
-            Vi tilbyder professionelt dykkerudstyr til udlejning, salg af kvalitetsprodukter og uforglemmelige ture under vandet.<br>
-            Uanset om du er nybegynder eller erfaren dykker, sørger vi for at du er godt klædt på med både det rigtige udstyr og viden.
-        </p>
-    </div>
-</div>
 <style>
     .scubadiver {
         position: relative;
@@ -25,7 +13,6 @@
         object-fit: cover;
         border-radius: 12px;
         display: block;
-
     }
 
     .scubatext {
@@ -44,115 +31,165 @@
         line-height: 1.6;
         letter-spacing: 0.01em;
     }
+
+    /* Product card layout fra BCD-siden */
+    .product-card {
+        background: rgba(255,255,255,0.8);
+        backdrop-filter: blur(10px);
+        border-radius: 1.25rem;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
+    .product-image {
+        width: 250px;
+        height: 180px;
+        border-radius: 1.25rem;
+        margin-bottom: 1rem;
+        object-fit: contain;
+    }
+
+    .product-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        text-align: center;
+    }
+
+    .product-description {
+        font-size: 0.95rem;
+        opacity: 0.8;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .price-tag {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #2dd4bf;
+        margin-bottom: 1.5rem;
+    }
+
+    .actions {
+        display: flex;
+        gap: 0.75rem;
+    }
+
+    .btn {
+        padding: 0.7rem 1.4rem;
+        border-radius: 1.25rem;
+        font-weight: 600;
+        cursor: pointer;
+        border: none;
+        transition: background 0.2s ease;
+    }
+
+    .btn-info {
+        background: #e2e8f0;
+        color: #0f172a;
+    }
+
+        .btn-info:hover {
+            background: #cbd5e1;
+        }
+
+    .btn-book {
+        background: #2dd4bf;
+        color: white;
+    }
+
+        .btn-book:hover {
+            background: #14b8a6;
+        }
 </style>
 
 
 
 
+<h1>Velkommen til Deep Dive</h1>
 
-    <h3>Her kan du se vores mest populære udstyr denne måned</h3>
-    <body>
-        <style>
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px; /* Afstand mellem kort */
-        }
-
-        .card {
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 16px;
-            width: calc(33.33% - 16px); /* Tre kort pr. række */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        (max-width: 768px) {
-            .card
-
-        {
-            width: calc(50% - 16px); /* To kort pr. række på mindre skærme */
-        }
-
-        }
-        (max-width: 480px) {
-            .card
-
-        {
-            width: 100%; /* Ét kort pr. række på små skærme */
-        }
-
-        }
-           
-        </style>
-
-
-        </body>
-
-<ul class="cards list-unstyled">
-<div class="card" style="width: 18rem;">
-    <img src="~/lib/images/navigator lite blue.jpg" class="BCD" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">Model: Navigator Lite BCD</h5>
-        <p class="card-text">
-            Mærke: Scubapro<br />
-            Størrelser: S, M, L<br />
-            Pris Pr. dag: 125 kr<br />
-            Navigator Lite fra Scubapro er den ideelle BCD til den rekreative dykker, der foretrækker en lækker jakke-BCD med et enkelt, men robust design. Perfekt til rejser, uden at gå på kompromis med funktionalitet eller stil.<br />
+<div class="scubadiver">
+    <img src="~/lib/Images/scubadiver.jpg" alt="frontpage image" class="scubaimage">
+    <div class="scubatext">
+        <p>
+            Oplev en verden af spændende dykkeroplevelser med os!<br>
+            Vi tilbyder professionelt dykkerudstyr til udlejning, salg af kvalitetsprodukter og uforglemmelige ture under vandet.<br>
+            Uanset om du er nybegynder eller erfaren dykker, sørger vi for at du er godt klædt på med både det rigtige udstyr og viden.
         </p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
     </div>
 </div>
-<div class="card" style="width: 18rem;">
-    <img src="~/lib/images/Fuld Pakke Sæt.png" class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">Scubapro Pakke - Fuld Sæt</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-</div>
-<div class="card" style="width: 18rem;">
-    <img src="~/lib/images/Tanks.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">Tanke</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-</div>
-<div class="card" style="width: 18rem;">
-    <img src="~/lib/images/Regulator-Set.png" class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">Regulatorsæt</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-</div>
-<div class="card" style="width: 18rem;">
-    <img src="~/lib/images/Maske&Snorkel.png" class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">Maske/Snorkel</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-</div>
-<div class="card" style="width: 18rem;">
-    <img src="~/lib/images/Finner.png" class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">Finner</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-</div>
-</ul>
-<style>
-    .cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 1rem;
-    }
 
-    .card {
-        border: 1px solid #ddd;
-        padding: 1rem;
-        border-radius: 8px;
-    }
-</style>
+<h3>Her kan du se vores mest populære udstyr denne måned</h3>
+
+<div class="row">
+    <div class="col-md-4 mb-4">
+        <div class="product-card h-100">
+            <img src="~/lib/images/navigator lite blue.jpg" class="product-image" alt="Navigator Lite BCD"/>
+            <h2 class="product-title">Navigator Lite BCD</h2>
+            <p class="product-description">Perfekt til rekreative dykkere. Komfortabel og robust.</p>
+            <p class="price-tag">💰125 DKK/pr.Dag</p>
+            <select class="Selected-size" aria-label="Vælg størrelse">
+                <option selected>Vælg størrelse</option>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+            </select>
+            <div class="actions">
+                <a class="btn btn-info" href="#">Se Mere</a>
+                <a class="btn btn-book btn btn-primary" href="#">🛒Tilføj til Kurv</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="product-card h-100">
+            <img src="~/lib/images/divingsuiteliteplus.jpg" class="product-image" alt="E.Lite Plus"/>
+            <h2 class="product-title">E.Lite Plus Santi</h2>
+            <p class="product-description">Tørdragt, Herre/Dame. Komfortabel og holdbar.</p>
+            <p class="price-tag">💰350 DKK/pr.Dag</p>
+            <select class="Selected-size" aria-label="Vælg størrelse">
+                <option selected>Vælg størrelse</option>
+                <option>XS</option>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+            </select>
+            <div class="actions">
+                <a class="btn btn-info" href="#">Se Mere</a>
+                <a class="btn btn-book btn btn-primary" href="#">🛒Tilføj til Kurv</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="product-card h-100">
+            <img src="~/lib/images/fingofin.jpg" class="product-image" alt="GO Travel Fin"/>
+            <h2 class="product-title">GO Travel Finner</h2>
+            <p class="product-description">Finner til alle størrelser, let bevægelse under vandet.</p>
+            <p class="price-tag">💰50 DKK/pr.Dag</p>
+            <select class="Selected-size" aria-label="Vælg størrelse">
+                <option selected>Vælg størrelse</option>
+                <option>XS</option>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+            </select>
+            <div class="actions">
+                <a class="btn btn-info" href="#">Se Mere</a>
+                <a class="btn btn-book btn btn-primary" href="#">🛒Tilføj til Kurv</a>
+            </div>
+        </div>
+    </div>
+</div>
+
