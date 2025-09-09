@@ -13,7 +13,8 @@ namespace True_Dive_Deep.Persistence
                 StepOne = "MK25EVO",
                 StepTwo = "S600",
                 Octopus = "R105",
-                PricePerDay = 125
+                PricePerDay = 125,
+                ImageFileName = "Regulator-Set.png"
             },
             new RegulatorSet
             {
@@ -22,7 +23,8 @@ namespace True_Dive_Deep.Persistence
                 StepOne = "MK17EVO",
                 StepTwo = "C370",
                 Octopus = "R095",
-                PricePerDay = 100
+                PricePerDay = 100,
+                ImageFileName = "Regulator-Set.png"
             },
             new RegulatorSet
             {
@@ -31,7 +33,8 @@ namespace True_Dive_Deep.Persistence
                 StepOne = "MK25EVO BT",
                 StepTwo = "A700 Carbon BT",
                 Octopus = "S270",
-                PricePerDay = 150
+                PricePerDay = 150,
+                ImageFileName = "Regulator-Set.png"
             }
         };
         public static List<RegulatorSet> GetAll()

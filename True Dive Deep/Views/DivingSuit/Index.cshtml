@@ -1,27 +1,35 @@
 ﻿@using True_Dive_Deep.Models
 @model List<DivingSuit>
 @{
-    Layout = "_Layout";
+    Layout = "~/Views/Shared/_ProductsLayout.cshtml";
 }
 
 <div class="row">
     @foreach (var divingSuit in Model)
     {
         <div class="col-md-4 mb-4">
-            <div class="card h-100" style="width: 18rem;">
-                <img src="~/lib/images/@(divingSuit.Model.Replace(" ", "").ToLower()).jpg" class="card-img-top" alt="@divingSuit.Model" />
-                <div class="card-body">
-                    <h5 class="card-title">Model: @divingSuit.Model</h5>
-                    <p class="card-text">
-                        Mærke: @divingSuit.Brand<br />
-                        Størrelser: @string.Join(", ", divingSuit.Sizes)<br />
-                        Type: @divingSuit.Type<br />
-                        Køn: @divingSuit.Gender<br />
-                        Tykkelse: @divingSuit.Thickness mm<br />
-                        Pris pr. dag: @divingSuit.PricePerDay kr<br />
+            <div class="product-card h-100" style="width: 18rem;">
+                <img src="~/lib/images/@divingSuit.ImageFileName" class="product-image card-img-top" alt="@divingSuit.Model" />
+
+                    <h2 class="product-title">@divingSuit.Model @divingSuit.Brand</h2>
+                    <p class="product-description">
+                        Type: @divingSuit.Type
+                        Køn: @divingSuit.Gender
+                        Tykkelse: @divingSuit.Thickness mm
                     </p>
-                    <a href="#" class="btn btn-primary">Se mere</a>
-                </div>
+                    <p class="price-tag">💰@divingSuit.PricePerDay DKK/pr.Dag</p>
+
+                    <select class="Selected-size" aria-label="Vælg størrelse">
+                        <option selected>Vælg størrelse</option>
+                        @foreach (var size in divingSuit.Sizes)
+                        {
+                            <option value="@size">@size</option>
+                        }
+                    </select>
+                    <div class="actions">
+                        <a class="btn btn-info" href="#" class="btn btn-secondary">Se Mere</a>
+                        <a class="btn btn-book btn btn-primary" asp-controller="Cart" asp-action="AddToCart" asp-route-id="@divingSuit.DivingSuitId">🛒Tilføj til Kurv</a>
+                    </div>
             </div>
         </div>
     }

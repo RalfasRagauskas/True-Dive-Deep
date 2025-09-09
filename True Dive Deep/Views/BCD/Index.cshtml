@@ -1,22 +1,23 @@
 ﻿@using True_Dive_Deep.Models
 @model List<BCD>
+@addTagHelper *,Microsoft.Mvc.TagHelpers
 
 @{
-    Layout = "_Layout";
+    Layout = "~/Views/Shared/_ProductsLayout.cshtml";
 }
+
 
 <div class="row">
     @foreach (var bcd in Model)
     {
-        <div class="col-md-4 mb-4">
-            <div class="card h-100" style="width: 18rem;">
-                <img src="~/lib/images/@(bcd.Model.Replace(" ", "").ToLower()).jpg" class="card-img-top" alt="@bcd.Model" />
-                <div class="card-body">
-                    <h5 class="card-title">Model: @bcd.Model</h5>
-                    <p class="card-text">
-                        Mærke: @bcd.Brand<br />
-                        Pris pr. dag: @bcd.PricePerDay kr<br />
-                    </p>
+       <div class="col-md-4 mb-4">
+            <div class="product-card h-100" style="width: 18rem;">
+                <img src="~/lib/images/@bcd.ImageFileName" class="product-image card-img-top" alt="@bcd.Model"/>
+
+                <h2 class="product-title">@bcd.Model @bcd.Brand</h2>
+                <p class="product-description"> </p>
+                <p class="price-tag">💰@bcd.PricePerDay DKK/pr.Dag</p>
+
                     <select class="Selected-size" aria-label="Vælg størrelse">
                         <option selected>Vælg størrelse</option>
                         @foreach (var size in bcd.Sizes)
@@ -24,10 +25,11 @@
                             <option value="@size">@size</option>
                         }
                     </select>
+                <div class="actions">
+                        <a class="btn btn-info" href="#" class="btn btn-secondary">Se Mere</a>
+                        <a class="btn btn-book btn btn-primary" asp-controller="Cart" asp-action="Add">🛒Tilføj til Kurv</a>
                 </div>
-                 <div class="card-footer1"><a href="#" class="btn btn-primary">Tilføj til Kurv</a> 
-                </div><div class="card-footer2"><a href="#" class="btn btn-primary">Se Mere</a></div>
-            </div>
+           </div>
         </div>
     }
 </div>

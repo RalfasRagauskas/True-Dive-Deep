@@ -15,5 +15,6 @@
         public string Model { get; set; } = string.Empty;
         public List<FinSize> Sizes { get; set; } = new();
         public int PricePerDay { get; set; }
+        public string? ImageFileName { get; set; }
     }
 }

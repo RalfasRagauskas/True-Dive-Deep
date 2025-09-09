@@ -13,49 +13,56 @@ namespace True_Dive_Deep.Persistence
                 Mask_SnorkelId = 1,
                 Brand = "Scubapro",
                 Model = "Ghost",
-                PricePerDay = 50
+                PricePerDay = 50,
+                ImageFileName = "Maske&Snorkel.png"
             },
             new Mask_Snorkel 
             { 
                 Mask_SnorkelId = 2,
                 Brand = "Scubapro",
                 Model = "D-Mask",
-                PricePerDay = 60
+                PricePerDay = 60,
+                ImageFileName = "Maske&Snorkel.png"
             },
             new Mask_Snorkel 
             { 
                 Mask_SnorkelId = 3,
                 Brand = "Scubapro",
                 Model = "Spectra Mini",
-                PricePerDay = 50
+                PricePerDay = 50,
+                ImageFileName = "Maske&Snorkel.png"
             },
             new Mask_Snorkel 
             { 
                 Mask_SnorkelId = 4,
                 Brand = "Scubapro",
                 Model = "Crystal VU",
-                PricePerDay = 75
+                PricePerDay = 75,
+                ImageFileName = "Maske&Snorkel.png"
             },
             new Mask_Snorkel 
             { 
                 Mask_SnorkelId = 5,
                 Brand = "Fourth Element",
                 Model = "Scout Kontrast",
-                PricePerDay = 75
+                PricePerDay = 75,
+                ImageFileName = "Maske&Snorkel.png"
             },
             new Mask_Snorkel 
             { 
                 Mask_SnorkelId = 6,
                 Brand = "Fourth Element",
                 Model = "Scout Enhance",
-                PricePerDay = 75
+                PricePerDay = 75,
+                ImageFileName = "Maske&Snorkel.png"
             },
             new Mask_Snorkel 
             { 
                 Mask_SnorkelId = 7,
                 Brand = "Tusa",
                 Model = "Element",
-                PricePerDay = 75
+                PricePerDay = 75,
+                ImageFileName = "Maske&Snorkel.png"
             }
         };
         public static List<Mask_Snorkel> GetAll()

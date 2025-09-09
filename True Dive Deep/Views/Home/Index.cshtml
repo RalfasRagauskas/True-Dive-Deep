@@ -1,22 +1,53 @@
 ﻿
 <h1>Velkommen til Deep Dive</h1>
 
-<div style="position: relative; display: inline-block;">
-    <img src="~/lib/Images/scubadiver.jpg" alt="frontpage image" style="width:896px; height: 250;">
-    <span style="
+<div class="scubadiver">
+    <img src="~/lib/Images/scubadiver.jpg" alt="frontpage image" class="scubaimage">
+    <div class="scubatext">
+        <p>
+            Oplev en verden af spændende dykkeroplevelser med os!<br>
+            Vi tilbyder professionelt dykkerudstyr til udlejning, salg af kvalitetsprodukter og uforglemmelige ture under vandet.<br>
+            Uanset om du er nybegynder eller erfaren dykker, sørger vi for at du er godt klædt på med både det rigtige udstyr og viden.
+        </p>
+    </div>
+</div>
+<style>
+    .scubadiver {
+        position: relative;
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto 2rem auto;
+    }
+
+    .scubaimage {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 12px;
+        display: block;
+
+    }
+
+    .scubatext {
         position: absolute;
         top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: white;
-        ">
+        left: 5%;
+        transform: translateY(-50%);
+        background: rgba(0, 32, 64, 0.6);
+        color: #fff;
+        font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+        font-size: 1.2rem;
+        max-width: 400px;
+        padding: 24px 28px;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        line-height: 1.6;
+        letter-spacing: 0.01em;
+    }
+</style>
 
-        </span>
-</div>
 
-<p class="description">Oplev en verden af spændende dykkeroplevelser med os! 
-    Vi tilbyder professionelt dykkerudstyr til udlejning, salg af kvalitetsprodukter og uforglemmelige ture under vandet. 
-    Uanset om du er nybegynder eller erfaren dykker, sørger vi for at du er godt klædt på med både det rigtige udstyr og viden.</p>
+
 
 
     <h3>Her kan du se vores mest populære udstyr denne måned</h3>

@@ -1,22 +1,24 @@
 ﻿@using True_Dive_Deep.Models
 @model List<Tank>
 @{
-    Layout = "_Layout";
+    Layout = "~/Views/Shared/_ProductsLayout.cshtml";
 }
 <div class="row">
     @foreach (var tank in Model)
     {
         <div class="col-md-4 mb-4">
-            <div class="card h-100" style="width: 18rem;">
-                <img src="~/lib/images/@(tank.Brand.Replace(" ", "").ToLower()).jpg" class="card-img-top" alt="@tank.Brand" />
-                <div class="card-body">
-                    <h5 class=" card-title">Mærke: @tank.Brand</h5>
-                    <p class="card-text">
-                        Mærke: @tank.Brand<br />
-                        Volumen: @tank.Volume Liter<br />
-                        Pris pr. dag: @tank.PricePerDay kr<br />
+            <div class="product-card h-100" style="width: 18rem;">
+                <img src="~/lib/images/@tank.ImageFileName" class="product-image card-img-top" alt="@tank.Brand" />
+
+                    <h2 class="product-title">@tank.Brand</h2>
+                    <p class="product-description">
+                        Volumen: @tank.Volume Liter
                     </p>
-                    <a href="#" class="btn btn-primary">Se mere</a>
+                    <p class="price-tag">💰@tank.PricePerDay DKK/pr.Dag</p>
+
+                <div class="actions">
+                    <a class="btn btn-info" href="#" class="btn btn-secondary">Se Mere</a>
+                    <a class="btn btn-book btn btn-primary" asp-controller="Cart" asp-action="AddToCart" asp-route-id="@tank.TankId">🛒Tilføj til Kurv</a>
                 </div>
             </div>
         </div>

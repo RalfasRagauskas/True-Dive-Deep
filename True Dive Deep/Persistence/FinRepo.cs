@@ -13,7 +13,8 @@ namespace True_Dive_Deep.Persistence
                 Brand = "Scubapro",
                 Model = "Jet Fin",
                 Sizes = new List<FinSize>{ FinSize.XS, FinSize.S, FinSize.M, FinSize.L, FinSize.XL},
-                PricePerDay = 50 
+                PricePerDay = 50,
+                ImageFileName = "finjetfn.jpg"
             },
             new Fin 
             { 
@@ -21,7 +22,8 @@ namespace True_Dive_Deep.Persistence
                 Brand = "Scubapro",
                 Model = "GO Travel",
                 Sizes = new List<FinSize>{ FinSize.XS, FinSize.S, FinSize.M, FinSize.L, FinSize.XL },
-                PricePerDay = 50
+                PricePerDay = 50,
+                ImageFileName = "fingofin.jpg"
             },
             new Fin 
             { 
@@ -29,7 +31,8 @@ namespace True_Dive_Deep.Persistence
                 Brand = "Scubapro",
                 Model = "Seawing Supernova",
                 Sizes = new List<FinSize>{ FinSize.XS, FinSize.S, FinSize.M, FinSize.L, FinSize.XL },
-                PricePerDay = 60
+                PricePerDay = 60,
+                ImageFileName = "finjetfn.jpg"
             },
             new Fin 
             { 
@@ -37,7 +40,8 @@ namespace True_Dive_Deep.Persistence
                 Brand = "Seac",
                 Model = "Propulsion",
                 Sizes = new List<FinSize>{ FinSize.XS, FinSize.S, FinSize.M, FinSize.L, FinSize.XL },
-                PricePerDay = 50
+                PricePerDay = 50,
+                ImageFileName = "fingofin.jpg"
             },
             new Fin 
             { 
@@ -45,7 +49,8 @@ namespace True_Dive_Deep.Persistence
                 Brand = "Seac",
                 Model = "ALA",
                 Sizes = new List<FinSize>{ FinSize.XS, FinSize.S, FinSize.M, FinSize.L, FinSize.XL },
-                PricePerDay = 50
+                PricePerDay = 50,
+                ImageFileName = "fingofin.jpg"
             },
             new Fin 
             { 
@@ -53,7 +58,8 @@ namespace True_Dive_Deep.Persistence
                 Brand = "Fourth Element",
                 Model = "Tech",
                 Sizes = new List<FinSize>{ FinSize.XS, FinSize.S, FinSize.M, FinSize.L, FinSize.XL },
-                PricePerDay = 75
+                PricePerDay = 75,
+                ImageFileName = "finjetfn.jpg"
             },
             new Fin 
             { 
@@ -61,7 +67,8 @@ namespace True_Dive_Deep.Persistence
                 Brand = "Fourth Element",
                 Model = "Rec Fin",
                 Sizes = new List<FinSize>{ FinSize.XS, FinSize.S, FinSize.M, FinSize.L, FinSize.XL },
-                PricePerDay = 80
+                PricePerDay = 80,
+                ImageFileName = "finjetfn.jpg"
             }
         };
         public static List<Fin> GetAll()

@@ -11,12 +11,13 @@
     public class DivingSuit
     {
         public int DivingSuitId { get; set; }
-        public string Brand { get; set; } = string.Empty;
-        public string Model { get; set; } = string.Empty;
+        public string? Brand { get; set; }
+        public string? Model { get; set; }
         public List<DivingSuitSize> Sizes { get; set; } = new();
-        public string Type { get; set; } = string.Empty;
-        public string Gender { get; set; } = string.Empty;
+        public string? Type { get; set; }
+        public string? Gender { get; set; }
         public double Thickness { get; set; }
         public int PricePerDay { get; set; }
+        public string? ImageFileName { get; set; }
     }
 }

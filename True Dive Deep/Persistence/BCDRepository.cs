@@ -13,7 +13,8 @@ namespace True_Dive_Deep.Persistence
                 Brand = "Scubapro",
                 Model = "Navigator Lite BCD",
                 Sizes = new List<BCDSize> { BCDSize.S, BCDSize.M, BCDSize.L },
-                PricePerDay = 125
+                PricePerDay = 125,
+                ImageFileName = "navigatorliteblue.jpg"
             },
             new BCD
             {
@@ -21,7 +22,8 @@ namespace True_Dive_Deep.Persistence
                 Brand = "Scubapro",
                 Model = "BCD Glide",
                 Sizes = new List<BCDSize> { BCDSize.S, BCDSize.M, BCDSize.L },
-                PricePerDay = 140
+                PricePerDay = 140,
+                ImageFileName = "bcd02.jpg"
             },
             new BCD
             {
@@ -29,7 +31,8 @@ namespace True_Dive_Deep.Persistence
                 Brand = "Scubapro",
                 Model = "BCD Hydros Pro",
                 Sizes = new List<BCDSize> { BCDSize.S, BCDSize.M, BCDSize.L },
-                PricePerDay = 200
+                PricePerDay = 200,
+                ImageFileName = "bcdhydrospro.png"
             },
             new BCD
             {
@@ -37,7 +40,8 @@ namespace True_Dive_Deep.Persistence
                 Brand = "Seac",
                 Model = "BCD Modular",
                 Sizes = new List<BCDSize> { BCDSize.S, BCDSize.M, BCDSize.L },
-                PricePerDay = 145
+                PricePerDay = 145,
+                ImageFileName = "bcdmodular.jpg"
             }
         };
 

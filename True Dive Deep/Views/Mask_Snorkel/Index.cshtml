@@ -1,22 +1,23 @@
 ﻿@using True_Dive_Deep.Models
 @model List<Mask_Snorkel>
 @{
-    Layout = "_Layout";
+    Layout = "~/Views/Shared/_ProductsLayout.cshtml";
 }
 <div class="row">
     @foreach (var mask_snorkel in Model)
     {
         <div class="col-md-4 mb-4">
-            <div class="card h-100" style="width: 18rem;">
-                <img src="~/lib/images/@(mask_snorkel.Model.Replace(" ", "").ToLower()).jpg" class="card-img-top" alt="@mask_snorkel.Model" />
-                <div class="card-body">
-                    <h5 class="card-title">Model: @mask_snorkel.Model</h5>
-                    <p class="card-text">
-                        Mærke: @mask_snorkel.Brand<br />
-                        Pris pr. dag: @mask_snorkel.PricePerDay kr<br />
-                    </p>
-                    <a href="#" class="btn btn-primary">Se mere</a>
-                </div>
+            <div class="product-card h-100" style="width: 18rem;">
+                <img src="~/lib/images/@mask_snorkel.ImageFileName" class="product-image card-img-top" alt="@mask_snorkel.Model" />
+
+                    <h2 class="product-title">@mask_snorkel.Model @mask_snorkel.Brand</h2>
+                    <p class="product-description"> </p>
+                    <p class="price-tag">💰@mask_snorkel.PricePerDay DKK/pr.Dag</p>
+
+                    <div class="actions">
+                        <a class="btn btn-info" href="#" class="btn btn-secondary">Se Mere</a>
+                        <a class="btn btn-book btn btn-primary" asp-controller="Cart" asp-action="AddToCart" asp-route-id="@mask_snorkel.Mask_SnorkelId">🛒Tilføj til Kurv</a>
+                    </div>
             </div>
         </div>
     }

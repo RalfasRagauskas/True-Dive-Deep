@@ -15,7 +15,8 @@ using True_Dive_Deep.Models;
                 Type = "Våddragt",
                 Gender = "Herre/Dame",
                 Thickness = 3,
-                PricePerDay = 100
+                PricePerDay = 100,
+                ImageFileName = "Dykkerdragter.webp"
             },
             new DivingSuit
             {
@@ -26,7 +27,8 @@ using True_Dive_Deep.Models;
                 Type = "Våddragt",
                 Gender = "Herre/Dame",
                 Thickness = 5,
-                PricePerDay = 100
+                PricePerDay = 100,
+                ImageFileName = "divingsuit5mm.webp"
             },
             new DivingSuit
             {
@@ -37,7 +39,8 @@ using True_Dive_Deep.Models;
                 Type = "Våddragt",
                 Gender = "Herre/Dame",
                 Thickness = 7,
-                PricePerDay = 100
+                PricePerDay = 100,
+                ImageFileName = "divingsuit7mm.webp"
             },
             new DivingSuit
             {
@@ -48,7 +51,8 @@ using True_Dive_Deep.Models;
                 Type = "Våddragt",
                 Gender = "Herre/Dame",
                 Thickness = 3.5,
-                PricePerDay = 100
+                PricePerDay = 100,
+                ImageFileName = "divingsuitW5.jpg"
             },
             new DivingSuit
             {
@@ -59,7 +63,8 @@ using True_Dive_Deep.Models;
                 Type = "Våddragt",
                 Gender = "Herre/Dame",
                 Thickness = 5,
-                PricePerDay = 120
+                PricePerDay = 120,
+                ImageFileName = "divingsuitproteus.jpg"
             },
             new DivingSuit
             {
@@ -69,7 +74,8 @@ using True_Dive_Deep.Models;
                 Sizes = new List<DivingSuitSize> { DivingSuitSize.XS, DivingSuitSize.S, DivingSuitSize.M, DivingSuitSize.L, DivingSuitSize.XL },
                 Type = "Tørdragt",
                 Gender = "Herre/Dame",
-                PricePerDay = 300
+                PricePerDay = 300,
+                ImageFileName = "divingsuitexodry.webp"
             },
             new DivingSuit
             {
@@ -79,7 +85,8 @@ using True_Dive_Deep.Models;
                 Sizes = new List<DivingSuitSize> { DivingSuitSize.XS, DivingSuitSize.S, DivingSuitSize.M, DivingSuitSize.L, DivingSuitSize.XL },
                 Type = "Tørdragt",
                 Gender = "Herre/Dame",
-                PricePerDay = 320
+                PricePerDay = 320,
+                ImageFileName = "divingsuitd7evo.jpg"
             },
             new DivingSuit
             {
@@ -89,7 +96,8 @@ using True_Dive_Deep.Models;
                 Sizes = new List<DivingSuitSize> { DivingSuitSize.XS, DivingSuitSize.S, DivingSuitSize.M, DivingSuitSize.L, DivingSuitSize.XL },
                 Type = "Tørdragt",
                 Gender = "Herre/Dame",
-                PricePerDay = 350
+                PricePerDay = 350,
+                ImageFileName = "divingsuiteliteplus.jpg"
             }
         };
             public static List<DivingSuit> GetAll()

@@ -11,7 +11,8 @@ namespace True_Dive_Deep.Persistence
                 TankId = 1,
                 Brand = "Scubapro",
                 Volume = 5,
-                PricePerDay = 150 
+                PricePerDay = 150,
+                ImageFileName = ""
             },
     
             new Tank 
@@ -19,7 +20,8 @@ namespace True_Dive_Deep.Persistence
                 TankId = 2,
                 Brand = "Scubapro",
                 Volume = 10,
-                PricePerDay = 160
+                PricePerDay = 160,
+                ImageFileName = ""
             },
     
             new Tank 
@@ -27,7 +29,8 @@ namespace True_Dive_Deep.Persistence
                 TankId = 3,
                 Brand = "Scubapro",
                 Volume = 12,
-                PricePerDay = 170
+                PricePerDay = 170,
+                ImageFileName = ""
             },
     
             new Tank 
@@ -35,7 +38,8 @@ namespace True_Dive_Deep.Persistence
                 TankId = 4,
                 Brand = "Scubapro",
                 Volume = 15,
-                PricePerDay = 180
+                PricePerDay = 180,
+                ImageFileName = ""
             }
         };
         public static List<Tank> GetAll()

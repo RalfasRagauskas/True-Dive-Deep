@@ -1,0 +1,120 @@
+﻿@{
+    Layout = "_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+    <style>
+        :root {
+            --primary: #2dd4bf;
+            --secondary: #0f172a;
+            --text: #1e293b;
+            --bg: #f8fafc;
+            --radius: 1.25rem;
+            --shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        body {
+            font-family: "Inter", system-ui, sans-serif;
+           
+            color: var(--text);
+            margin: 0;
+            padding: 2rem;
+        }
+
+        .product-card {
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+            .product-card:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+            }
+
+        .product-image {
+        width: 250px; 
+        height: 180px;
+        border-radius: var(--radius);
+        margin-bottom: 1rem;
+        
+        object-fit: contain;
+    }
+
+        .product-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .product-description {
+            font-size: 0.95rem;
+            opacity: 0.8;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .price-tag {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .actions {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .btn {
+            padding: 0.7rem 1.4rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: background 0.2s ease;
+        }
+
+        .btn-back {
+            background: #e2e8f0;
+            color: var(--secondary);
+        }
+
+            .btn-back:hover {
+                background: #cbd5e1;
+            }
+
+        .btn-book {
+            background: var(--primary);
+            color: white;
+        }
+            body {
+           min-height: 100vh;
+           margin: 0;
+           color: white;
+       }
+       .rounded-navbar {
+           border-radius: 20px;
+           margin: 16px;
+           box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+       }
+       /* ... resten af din CSS her ... */
+        }
+
+            .btn-book:hover {
+                background: #14b8a6;
+            }
+    </style>
+
+<div class="container">
+    @RenderSection("Title", required: false)
+    @RenderBody()
+</div>
