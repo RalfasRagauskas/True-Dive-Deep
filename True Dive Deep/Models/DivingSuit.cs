@@ -8,6 +8,11 @@
         L,
         XL
     }
+    public enum  DivingSuitGender
+    {
+        Herre,
+        Dame
+    }
     public class DivingSuit
     {
         public int DivingSuitId { get; set; }
@@ -15,7 +20,7 @@
         public string? Model { get; set; }
         public List<DivingSuitSize> Sizes { get; set; } = new();
         public string? Type { get; set; }
-        public string? Gender { get; set; }
+        public List<DivingSuitGender> Gender { get; set; } = new();
         public double Thickness { get; set; }
         public int PricePerDay { get; set; }
         public string? ImageFileName { get; set; }

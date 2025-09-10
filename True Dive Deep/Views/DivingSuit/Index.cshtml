@@ -14,10 +14,17 @@
                     <h2 class="product-title">@divingSuit.Model @divingSuit.Brand</h2>
                     <p class="product-description">
                         Type: @divingSuit.Type
-                        Køn: @divingSuit.Gender
                         Tykkelse: @divingSuit.Thickness mm
                     </p>
                     <p class="price-tag">💰@divingSuit.PricePerDay DKK/pr.Dag</p>
+
+                     <select class="Selected-size" aria-label="Vælg Køn">
+                        <option selected>Vælg Køn</option>
+                        @foreach (var gender in divingSuit.Gender)
+                        {
+                        <option value="@gender">@gender</option>
+                        }
+                    </select>
 
                     <select class="Selected-size" aria-label="Vælg størrelse">
                         <option selected>Vælg størrelse</option>
