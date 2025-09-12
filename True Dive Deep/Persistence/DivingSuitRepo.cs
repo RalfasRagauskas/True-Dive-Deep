@@ -8,7 +8,7 @@ using True_Dive_Deep.Models;
         {
             new DivingSuit
             {
-                DivingSuitId = 1,
+                ProductId = 1,
                 Brand = "Scubapro",
                 Model = "Definition",
                 Sizes = new List<DivingSuitSize> { DivingSuitSize.XS, DivingSuitSize.S, DivingSuitSize.M, DivingSuitSize.L, DivingSuitSize.XL },
@@ -20,7 +20,7 @@ using True_Dive_Deep.Models;
             },
             new DivingSuit
             {
-                DivingSuitId = 2,
+                ProductId = 2,
                 Brand = "Scubapro",
                 Model = "Definition",
                 Sizes = new List<DivingSuitSize> { DivingSuitSize.XS, DivingSuitSize.S, DivingSuitSize.M, DivingSuitSize.L, DivingSuitSize.XL },
@@ -32,7 +32,7 @@ using True_Dive_Deep.Models;
             },
             new DivingSuit
             {
-                DivingSuitId = 3,
+                ProductId = 3,
                 Brand = "Scubapro",
                 Model = "Definition",
                 Sizes = new List<DivingSuitSize> { DivingSuitSize.XS, DivingSuitSize.S, DivingSuitSize.M, DivingSuitSize.L, DivingSuitSize.XL },
@@ -44,7 +44,7 @@ using True_Dive_Deep.Models;
             },
             new DivingSuit
             {
-                DivingSuitId = 4,
+                ProductId = 4,
                 Brand = "Waterproof",
                 Model = "W5",
                 Sizes = new List<DivingSuitSize> { DivingSuitSize.XS, DivingSuitSize.S, DivingSuitSize.M, DivingSuitSize.L, DivingSuitSize.XL },
@@ -56,7 +56,7 @@ using True_Dive_Deep.Models;
             },
             new DivingSuit
             {
-                DivingSuitId = 5,
+                ProductId = 5,
                 Brand = "Fourth Element",
                 Model = "Proteus",
                 Sizes = new List<DivingSuitSize> { DivingSuitSize.XS, DivingSuitSize.S, DivingSuitSize.M, DivingSuitSize.L, DivingSuitSize.XL },
@@ -68,7 +68,7 @@ using True_Dive_Deep.Models;
             },
             new DivingSuit
             {
-                DivingSuitId = 6,
+                ProductId = 6,
                 Brand = "Scubapro",
                 Model = "Exodry 4.0",
                 Sizes = new List<DivingSuitSize> { DivingSuitSize.XS, DivingSuitSize.S, DivingSuitSize.M, DivingSuitSize.L, DivingSuitSize.XL },
@@ -79,7 +79,7 @@ using True_Dive_Deep.Models;
             },
             new DivingSuit
             {
-                DivingSuitId = 7,
+                ProductId = 7,
                 Brand = "Waterproof",
                 Model = "D7 Evo",
                 Sizes = new List<DivingSuitSize> { DivingSuitSize.XS, DivingSuitSize.S, DivingSuitSize.M, DivingSuitSize.L, DivingSuitSize.XL },
@@ -90,7 +90,7 @@ using True_Dive_Deep.Models;
             },
             new DivingSuit
             {
-                DivingSuitId = 8,
+                ProductId = 8,
                 Brand = "Santi",
                 Model = "E.Lite Plus",
                 Sizes = new List<DivingSuitSize> { DivingSuitSize.XS, DivingSuitSize.S, DivingSuitSize.M, DivingSuitSize.L, DivingSuitSize.XL },
@@ -105,15 +105,15 @@ using True_Dive_Deep.Models;
             return divingSuits;
         }
 
-        public static DivingSuit? GetById(int id) => divingSuits.Find(d => d.DivingSuitId == id);
+        public static DivingSuit? GetById(int id) => divingSuits.Find(d => d.ProductId == id);
 
         public static void Add(DivingSuit divingsuit)
         {
             if (divingsuit == null) return;
-            divingsuit.DivingSuitId = divingSuits.Count > 0 ? divingSuits[^1].DivingSuitId + 1 : 1;
+            divingsuit.ProductId = divingSuits.Count > 0 ? divingSuits[^1].ProductId + 1 : 1;
             divingSuits.Add(divingsuit);
         }
 
-        public static void Delete(int id) => divingSuits.RemoveAll(d => d.DivingSuitId == id);
+        public static void Delete(int id) => divingSuits.RemoveAll(d => d.ProductId == id);
     }
 }

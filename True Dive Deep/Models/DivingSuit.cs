@@ -13,16 +13,12 @@
         Herre,
         Dame
     }
-    public class DivingSuit
+    public class DivingSuit : Product
     {
-        public int DivingSuitId { get; set; }
-        public string? Brand { get; set; }
         public string? Model { get; set; }
         public List<DivingSuitSize> Sizes { get; set; } = new();
         public string? Type { get; set; }
         public List<DivingSuitGender> Gender { get; set; } = new();
         public double Thickness { get; set; }
-        public int PricePerDay { get; set; }
-        public string? ImageFileName { get; set; }
     }
 }

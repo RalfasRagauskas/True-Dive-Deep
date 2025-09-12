@@ -8,7 +8,7 @@ namespace True_Dive_Deep.Persistence
         {
             new RegulatorSet
             {
-                RegulatorSetId = 1,
+             
                 Brand = "Scubapro",
                 StepOne = "MK25EVO",
                 StepTwo = "S600",
@@ -18,7 +18,7 @@ namespace True_Dive_Deep.Persistence
             },
             new RegulatorSet
             {
-                RegulatorSetId = 2,
+               
                 Brand = "Scubapro",
                 StepOne = "MK17EVO",
                 StepTwo = "C370",
@@ -28,7 +28,7 @@ namespace True_Dive_Deep.Persistence
             },
             new RegulatorSet
             {
-                RegulatorSetId = 3,
+                
                 Brand = "Scubapro",
                 StepOne = "MK25EVO BT",
                 StepTwo = "A700 Carbon BT",
@@ -41,13 +41,13 @@ namespace True_Dive_Deep.Persistence
         {
             return regulatorSets;
         }
-        public static RegulatorSet? GetById(int id) => regulatorSets.Find(r => r.RegulatorSetId == id);
+        public static RegulatorSet? GetById(int id) => regulatorSets.Find(r => r.ProductId == id);
         public static void Add(RegulatorSet regulatorSet)
         {
             if (regulatorSet == null) return;
-            regulatorSet.RegulatorSetId = regulatorSets.Count > 0 ? regulatorSets[^1].RegulatorSetId + 1 : 1;
+            regulatorSet.ProductId = regulatorSets.Count > 0 ? regulatorSets[^1].ProductId + 1 : 1;
             regulatorSets.Add(regulatorSet);
         }
-        public static void Delete(int id) => regulatorSets.RemoveAll(r => r.RegulatorSetId == id);
+        public static void Delete(int id) => regulatorSets.RemoveAll(r => r.ProductId == id);
     }
 }

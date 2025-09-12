@@ -8,7 +8,6 @@ namespace True_Dive_Deep.Persistence
         {
             new Tank 
             {
-                TankId = 1,
                 Brand = "Scubapro",
                 Volume = 5,
                 PricePerDay = 150,
@@ -17,7 +16,6 @@ namespace True_Dive_Deep.Persistence
     
             new Tank 
             { 
-                TankId = 2,
                 Brand = "Scubapro",
                 Volume = 10,
                 PricePerDay = 160,
@@ -26,7 +24,6 @@ namespace True_Dive_Deep.Persistence
     
             new Tank 
             { 
-                TankId = 3,
                 Brand = "Scubapro",
                 Volume = 12,
                 PricePerDay = 170,
@@ -35,7 +32,6 @@ namespace True_Dive_Deep.Persistence
     
             new Tank 
             { 
-                TankId = 4,
                 Brand = "Scubapro",
                 Volume = 15,
                 PricePerDay = 180,
@@ -46,13 +42,13 @@ namespace True_Dive_Deep.Persistence
         {
             return Tanks;
         }
-        public static Tank? GetById(int id) => Tanks.Find(t => t.TankId == id);
+        public static Tank? GetById(int id) => Tanks.Find(t => t.ProductId == id);
         public static void Add(Tank tank)
         {
             if (tank == null) return;
-            tank.TankId = Tanks.Count > 0 ? Tanks[^1].TankId + 1 : 1;
+            tank.ProductId = Tanks.Count > 0 ? Tanks[^1].ProductId + 1 : 1;
             Tanks.Add(tank);
         }
-        public static void Delete(int id) => Tanks.RemoveAll(t => t.TankId == id);
+        public static void Delete(int id) => Tanks.RemoveAll(t => t.ProductId == id);
     }
 }
