@@ -6,6 +6,10 @@ namespace True_Dive_Deep.Data
 {
     public class TrueDiveDeepContext : DbContext
     {
+
+        public DbSet<Booking> Bookings { get; set; } 
+        public DbSet<Cart> Carts { get; set; }
+        public DbSet<CartItem> CartItems { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<BCD> BCDs { get; set; }
         public DbSet<DivingSuit> DivingSuits { get; set; }
@@ -24,7 +28,13 @@ namespace True_Dive_Deep.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-           
+
+            modelBuilder.Entity<Cart>()
+                .HasMany(c => c.Items)
+                .WithOne(i => i.Cart)
+                .HasForeignKey(i => i.CartId)
+                .OnDelete(DeleteBehavior.Cascade);
+
             modelBuilder.Entity<BCD>().ToTable("BCD");
             modelBuilder.Entity<DivingSuit>().ToTable("DivingSuit");
             modelBuilder.Entity<Fin>().ToTable("Fin");

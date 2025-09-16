@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using True_Dive_Deep.Data;
 using Microsoft.EntityFrameworkCore;
+using True_Dive_Deep.Persistence
 
 
 namespace True_Dive_Deep
@@ -17,7 +18,8 @@ namespace True_Dive_Deep
             app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{Id?}");
             app.UseStaticFiles();
 
-
+            builder.Services.AddScoped<BookingRepository, BookingRepository>();
+            builder.Services.AddScoped<AccountRepository, AccountRepository>();
 
 
             app.Run();

@@ -3,7 +3,15 @@
     public class CartItem
 
     {
-        public int ProductId { get; set; }        
+        public int CartItemId { get; set; } // primary key
+        public int CartId { get; set; } // foreign key
+
+        public Cart Cart  { get; set; } //navigation property 
+
+        public int ProductId { get; set; }  //fkey for product    
+        public Product Product { get; set; } // nav property
+
+
         public string ProductName { get; set; }   
         public string Brand { get; set; }        
         public string ImageFileName { get; set; } 
