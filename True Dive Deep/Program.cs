@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
-using True_Dive_Deep.Data;
 using Microsoft.EntityFrameworkCore;
+using True_Dive_Deep.Data;
+using True_Dive_Deep.Models;
 using True_Dive_Deep.Persistence;
 
 
@@ -13,12 +14,18 @@ namespace True_Dive_Deep
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddDbContext<TrueDiveDeepContext>(options => { options.UseSqlServer(builder.Configuration.GetConnectionString("DiveDeepDatabase")); });
             builder.Services.AddControllersWithViews();
+            builder.Services.AddSession();
             var app = builder.Build();
-            app.UseRouting();
-            app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{Id?}");
             app.UseStaticFiles();
+            app.UseRouting();
+            app.UseSession();
 
-           // builder.Services.AddScoped<BookingRepository, BookingRepository>();
+            app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{Id?}");
+
+            app.UseAuthorization();
+            
+
+            // builder.Services.AddScoped<BookingRepository, BookingRepository>();
             // builder.Services.AddScoped<AccountRepository, AccountRepository>();
 
 

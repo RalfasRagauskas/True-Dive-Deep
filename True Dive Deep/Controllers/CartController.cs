@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis;
 using True_Dive_Deep.Models;
 
 namespace True_Dive_Deep.Controllers
@@ -10,27 +11,35 @@ namespace True_Dive_Deep.Controllers
 
         public IActionResult Index()
         {
-            return View(CartItems); // Viser nuværende kurv
+            return View(CartItems);
         }
 
+
         [HttpPost]
-        public IActionResult Add(string productName, string brand, string imageFileName, decimal price, string size, int quantity = 1)
+        public IActionResult AddToCart(int productId, string productName, string brand, string imageFileName, decimal price, string size = null, string gender = null, int quantity = 1)
         {
-            var item = new CartItem
+            // Tjek om item allerede findes
+            var existingItem = CartItems.FirstOrDefault(c => c.ProductId == productId && c.SelectedSize == size && c.SelectedGender == gender);
+            if (existingItem != null)
             {
-                ProductId = CartItems.Count + 1, // bare et midlertidigt ID
-                ProductName = productName,
-                Brand = brand,
-                ImageFileName = imageFileName,
-                PricePerDay = price,
-                SelectedSize = size,
-                Quantity = quantity
-            };
+                existingItem.Quantity += quantity;
+            }
+            else
+            {
+                CartItems.Add(new CartItem
+                {
+                    ProductId = productId,
+                    ProductName = productName,
+                    Brand = brand,
+                    ImageFileName = imageFileName,
+                    PricePerDay = price,
+                    SelectedSize = size,
+                    SelectedGender = gender,
+                    Quantity = quantity
+                });
+            }
 
-
-            CartItems.Add(item);
-
-            return RedirectToAction("Index");
+            return RedirectToAction("Index"); // Sender brugeren til Cart View
         }
     }
 }

@@ -16,10 +16,15 @@
                     </p>
                     <p class="price-tag">💰@tank.PricePerDay DKK/pr.Dag</p>
 
-                <div class="actions">
-                    <a class="btn btn-info" href="#" class="btn btn-secondary">Se Mere</a>
-                    <a class="btn btn-book btn btn-primary" asp-controller="Cart" asp-action="AddToCart" asp-route-id="@tank.ProductId">🛒Tilføj til Kurv</a>
-                </div>
+                <form asp-controller="Cart" asp-action="AddToCart" asp-route-id="productId" method="post">
+                    <input type="hidden" name="productId" value="@tank.ProductId" />
+                    <input type="hidden" name="brand" value="@tank.Brand" />
+                    <input type="hidden" name="imageFileName" value="@tank.ImageFileName" />
+                    <input type="hidden" name="price" value="@tank.PricePerDay" />
+                    <input type="number" name="quantity" value="1" min="1" class="form-control mb-2" />
+
+                    <button type="submit" class="btn btn-primary">🛒 Tilføj til Kurv</button>
+                </form>
             </div>
         </div>
     }

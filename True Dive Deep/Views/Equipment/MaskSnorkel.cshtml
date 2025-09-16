@@ -14,10 +14,17 @@
                     <p class="product-description"> </p>
                     <p class="price-tag">💰@mask_snorkel.PricePerDay DKK/pr.Dag</p>
 
-                    <div class="actions">
-                        <a class="btn btn-info" href="#" class="btn btn-secondary">Se Mere</a>
-                        <a class="btn btn-book btn btn-primary" asp-controller="Cart" asp-action="AddToCart" asp-route-id="@mask_snorkel.ProductId">🛒Tilføj til Kurv</a>
-                    </div>
+                <form asp-controller="Cart" asp-action="AddToCart" asp-route-id="productId" method="post">
+                    <input type="hidden" name="productId" value="@mask_snorkel.ProductId" />
+                    <input type="hidden" name="productName" value="@mask_snorkel.Model" />
+                    <input type="hidden" name="brand" value="@mask_snorkel.Brand" />
+                    <input type="hidden" name="imageFileName" value="@mask_snorkel.ImageFileName" />
+                    <input type="hidden" name="price" value="@mask_snorkel.PricePerDay" />
+
+                    <input type="number" name="quantity" value="1" min="1" class="form-control mb-2" />
+
+                    <button type="submit" class="btn btn-primary">🛒 Tilføj til Kurv</button>
+                </form>
             </div>
         </div>
     }

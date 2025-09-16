@@ -18,25 +18,34 @@
                     </p>
                     <p class="price-tag">💰@divingSuit.PricePerDay DKK/pr.Dag</p>
 
-                     <select class="Selected-size" aria-label="Vælg Køn">
-                        <option selected>Vælg Køn</option>
+                <form asp-controller="Cart" asp-action="AddToCart" asp-route-id="productId" method="post">
+                    <input type="hidden" name="productId" value="@divingSuit.ProductId" />
+                    <input type="hidden" name="productName" value="@divingSuit.Model" />
+                    <input type="hidden" name="brand" value="@divingSuit.Brand" />
+                    <input type="hidden" name="imageFileName" value="@divingSuit.ImageFileName" />
+                    <input type="hidden" name="price" value="@divingSuit.PricePerDay" />
+
+                    <select name="gender" class="form-select mb-2" required>
+                        <option value="">Vælg Køn</option>
                         @foreach (var gender in divingSuit.Gender)
                         {
-                        <option value="@gender">@gender</option>
+                            <option value="@gender">@gender</option>
                         }
                     </select>
 
-                    <select class="Selected-size" aria-label="Vælg størrelse">
-                        <option selected>Vælg størrelse</option>
+                    <select name="size" class="form-select mb-2" required>
+                        <option value="">Vælg størrelse</option>
                         @foreach (var size in divingSuit.Sizes)
                         {
                             <option value="@size">@size</option>
                         }
                     </select>
-                    <div class="actions">
-                        <a class="btn btn-info" href="#" class="btn btn-secondary">Se Mere</a>
-                        <a class="btn btn-book btn btn-primary" asp-controller="Cart" asp-action="AddToCart" asp-route-id="@divingSuit.ProductId">🛒Tilføj til Kurv</a>
-                    </div>
+
+                    <input type="number" name="quantity" value="1" min="1" class="form-control mb-2" />
+
+                    <button type="submit" class="btn btn-primary">🛒 Tilføj til Kurv</button>
+                </form>
+
             </div>
         </div>
     }

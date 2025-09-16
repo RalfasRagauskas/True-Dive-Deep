@@ -9,8 +9,4 @@
         public int PricePerDay { get; set; }
         public string? ImageFileName { get; set; } = string.Empty;
     }
-
- 
-
-
-    }
+ }

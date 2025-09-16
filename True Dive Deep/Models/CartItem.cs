@@ -17,6 +17,7 @@
         public string ImageFileName { get; set; } 
         public decimal PricePerDay { get; set; }  
         public string SelectedSize { get; set; }  
+        public string SelectedGender { get; set; }
         public int Quantity { get; set; }
     }
 }
