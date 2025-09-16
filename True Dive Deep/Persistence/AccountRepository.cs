@@ -1,7 +1,7 @@
 ﻿namespace True_Dive_Deep.Persistence;
 using True_Dive_Deep.Models;
 
-    public class AccountRepository
+    public static class AccountRepository
     {
         private static List<Account> accounts = new List<Account>
         {

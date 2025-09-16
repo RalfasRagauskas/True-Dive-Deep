@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <Compile Remove="Models\Equipment.cs" />
+    <Compile Remove="Persistence\AccountInterface.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -16,7 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Mask Snorkel\" />
     <Folder Include="Views\MyAccount\" />
   </ItemGroup>
 

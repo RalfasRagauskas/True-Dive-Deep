@@ -153,6 +153,8 @@
 
 
 
+
+
     <div class="col-md-4 mb-4">
         <div class="product-card h-100">
             <img src="~/lib/images/divingsuiteliteplus.jpg" class="product-image" alt="E.Lite Plus"/>
@@ -168,11 +170,15 @@
                 <option>XL</option>
             </select>
             <div class="actions">
-                <a class="btn btn-info" href="#">Se Mere</a>
-                <a class="btn btn-book btn btn-primary" href="#">🛒Tilføj til Kurv</a>
+                <a class="btn btn-info"  href="#">Se Mere</a>
+                <a asp-controller="Bookings" asp-action="Add" class="btn btn-book btn btn-primary" href="#">🛒Tilføj til Kurv</a>
             </div>
         </div>
     </div>
+
+
+
+
 
     <div class="col-md-4 mb-4">
         <div class="product-card h-100">

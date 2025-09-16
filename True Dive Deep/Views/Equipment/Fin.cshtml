@@ -1,0 +1,32 @@
+﻿@using True_Dive_Deep.Models
+@model List<Fin>
+@{
+    Layout = "~/Views/Shared/_ProductsLayout.cshtml";
+}
+
+<div class="row">
+    @foreach (var fin in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="product-card h-100" style="width: 18rem;">
+                <img src="~/lib/images/@fin.ImageFileName" class="product-image card-img-top" alt="@fin.Model" />
+
+                <h2 class="product-title">@fin.Model @fin.Brand</h2>
+                <p class="product-description"> </p>
+                <p class="price-tag">💰@fin.PricePerDay DKK/pr.Dag</p>
+
+                <select class="Selected-size" aria-label="Vælg størrelse">
+                    <option selected>Vælg størrelse</option>
+                    @foreach (var size in fin.Sizes)
+                    {
+                        <option value="@size">@size</option>
+                    }
+                </select>
+                <div class="actions">
+                    <a class="btn btn-info" href="#" class="btn btn-secondary">Se Mere</a>
+                    <a class="btn btn-book btn btn-primary" asp-controller="Cart" asp-action="AddToCart" asp-route-id="@fin.ProductId">🛒Tilføj til Kurv</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

@@ -2,9 +2,9 @@
 using True_Dive_Deep.Data;
 using True_Dive_Deep.Models;
 
-public class AccountInterface
-{ 
-    public interface AccountRepository
+
+
+    public interface IAccountRepository
         {
         void Add(Account account);
         void Delete(int id);
@@ -12,4 +12,5 @@ public class AccountInterface
         Account? GetById(int id);
         void Update(Account account);
         }
-}
+
+

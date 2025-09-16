@@ -3,7 +3,7 @@
     public class Cart
     {
         public int CartId { get; set; } //primary key for vores entity framework
-        public string UserId { get; set; } //guest carts
+        public string? UserId { get; set; } //guest carts
 
         public List<CartItem> Items { get; set; } = new List<CartItem>();
 
