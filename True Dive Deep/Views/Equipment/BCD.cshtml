@@ -19,7 +19,7 @@
                 <p class="price-tag">💰@bcd.PricePerDay DKK/pr.Dag</p>
 
 
-                <form asp-controller="Cart" asp-action="AddToCart" asp-route-id="productId" method="post">
+                <form asp-controller="Cart" asp-action="AddToCart" asp-route-id="@bcd.ProductId" method="post">
                 <input type="hidden" name="productId" value="@bcd.ProductId" />
                 <input type="hidden" name="productName" value="@bcd.Model" />
                 <input type="hidden" name="brand" value="@bcd.Brand" />

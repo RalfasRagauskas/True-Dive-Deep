@@ -14,7 +14,6 @@ namespace True_Dive_Deep.Controllers
             return View(CartItems);
         }
 
-
         [HttpPost]
         public IActionResult AddToCart(int productId, string productName, string brand, string imageFileName, decimal price, string size = null, string gender = null, int quantity = 1)
         {
