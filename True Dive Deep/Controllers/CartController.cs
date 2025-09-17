@@ -38,8 +38,8 @@ namespace True_Dive_Deep.Controllers
                     Quantity = quantity
                 });
             }
-
-            return RedirectToAction("Index"); // Sender brugeren til Cart View
+            // gør at bruger ikke sendes til kurv side, men bliver på den nuværende side. 
+            return Redirect(Request.Headers["Referer"].ToString());
         }
     }
 }
