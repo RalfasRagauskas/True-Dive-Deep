@@ -1,5 +1,6 @@
 ﻿@using True_Dive_Deep.Models
 @model List<RegulatorSet>
+
 @{
     Layout = "~/Views/Shared/_ProductsLayout.cshtml";
 }
@@ -17,8 +18,9 @@
                         Octopus: @regulatorSet.Octopus
                     </p>
                     <p class="price-tag">💰@regulatorSet.PricePerDay DKK/pr.Dag</p>
-                <form asp-controller="Cart" asp-action="AddToCart" asp-route-id="productId" method="post">
+                    <form action="/Cart/AddToCart" method="post">
                     <input type="hidden" name="productId" value="@regulatorSet.ProductId" />
+                    <input type="hidden" name="productName" value="@regulatorSet.Brand" />
                     <input type="hidden" name="brand" value="@regulatorSet.Brand" />
                     <input type="hidden" name="imageFileName" value="@regulatorSet.ImageFileName" />
                     <input type="hidden" name="price" value="@regulatorSet.PricePerDay" />
