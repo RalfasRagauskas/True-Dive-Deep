@@ -48,8 +48,17 @@
 
                 <div class="card mb-4">
                     <div class="card-body">
-                        <p><strong>Total amount:</strong> @Model.Sum(i => i.PricePerDay * i.Quantity) DKK</p>
+                        <p><strong>Total amount:</strong> <span id="totalPrice"> @Model.Sum(i => i.PricePerDay * i.Quantity)</span> DKK</p>
                     </div>
+                    <form id="dateform">
+                        <ul>
+                            <label for="start">StartDato:</label>
+                            <li><input type="date" id="start" name="start" required /></li>
+
+                            <label for="slut">SlutDato:</label>
+                            <li><input type="date" id="slut" name="slut" required /></li>
+                        </ul>
+                    </form>
                 </div>
 
                 <button class="btn btn-primary btn-lg btn-block">Betal her</button>
@@ -57,3 +66,56 @@
         </div>
     </div>
 </section>
+
+@section Scripts {
+    <script>
+        // Læs varerne fra Razor til JS som array af objekter
+        const cartItems = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(
+                    Model.Select(i => new { i.PricePerDay, i.Quantity })
+            ));
+
+    const startInput = document.getElementById('start');
+    const slutInput = document.getElementById('slut');
+    const totalPriceElem = document.getElementById('totalPrice');
+
+        function calculateDays(start, end) {
+            const diffTime = end.getTime() - start.getTime();
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) + 1;
+            return diffDays;
+        }
+
+        function updateTotalPrice() {
+            const startDateValue = startInput.value;
+            const slutDateValue = slutInput.value;
+
+            if (!startDateValue || !slutDateValue) {
+                totalPriceElem.textContent = '0';
+                return;
+            }
+
+            const startDate = new Date(startDateValue);
+            const slutDate = new Date(slutDateValue);
+
+            if (slutDate < startDate) {
+                totalPriceElem.textContent = '0';
+                return;
+            }
+
+            const days = calculateDays(startDate, slutDate);
+
+            let total = 0;
+            cartItems.forEach(item => {
+                total += item.PricePerDay * item.Quantity * days;
+            });
+
+            totalPriceElem.textContent = total;
+        }
+
+        startInput.addEventListener('change', updateTotalPrice);
+        slutInput.addEventListener('change', updateTotalPrice);
+
+        // Initial opdatering, hvis datoer allerede er udfyldt
+        updateTotalPrice();
+    </script>
+   }
+

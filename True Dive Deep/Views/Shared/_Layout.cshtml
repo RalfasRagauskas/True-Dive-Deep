@@ -9,9 +9,8 @@
     <title>Dive Deep</title>
     <style>
         body {
-            background: linear-gradient(135deg, #1a3a5a, #2b5d8c, #4da6ff);
-         
-            min-height: 100vh;
+            background-color: rgb(240, 248, 255);
+            min-height: 300px;
             margin: 0;
             color: white;
         }
@@ -24,7 +23,7 @@
         .navbar {
             box-shadow: 0 4px 12px rgba(0,0,0,0.2);
             padding: 0.5rem 1.5rem;
-            background: linear-gradient(135deg,#4da6ff,#1a73e8);
+            background-color: rgba(192, 192, 192);
             border-radius: 15px;
         }
 
@@ -61,7 +60,7 @@
 
        
         .navbar-nav .dropdown-menu {
-            background: linear-gradient(135deg,#4da6ff,#1a73e8);
+            background-color: floralwhite;
             border-radius: 12px;
             padding: 8px 0;
             box-shadow: 0 4px 12px rgba(0,0,0,0.25);
@@ -121,14 +120,14 @@
             bottom: 0;
             width: 100%;
             text-align: center;
-            color: white;
+            color: rgb(0, 0, 0);
             padding: 10px 0;
             background: radial-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2));
         }
 
         .topBanner {
-            background: linear-gradient(90deg, #4caf50, #81c784);
-            color: white;
+            background-color: rgba(192, 192, 192, 0.5);
+            color: black;
             padding: 10px 20px;
             text-align: center;
             position: relative;
@@ -173,8 +172,6 @@
                 transform: translateY(-2px) scale(1.03);
                 box-shadow: 0 6px 14px rgba(0,0,0,0.3);
             }
-
-
     </style>
 </head>
 
@@ -226,6 +223,9 @@
                         <li class="nav-item">
                             <a class="nav-link " href="/Information/index">Information</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/DivingWeather/index">Dykkerforhold</a>
+                        </li>
                         <li class="nav-item dropdown active">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Kategorier
@@ -246,10 +246,6 @@
                         <img src="/lib/Images/shopping-cart.png" alt="Cart">
                         <span>Se kurv</span>
                     </a>
-                   
-
-
-                  
                 </div>
             </div>
         </nav>
@@ -261,11 +257,23 @@
         @RenderBody()
     </div>
 
+
     <footer>
-        Adresse: Dykkervej 10, 5000 Odense C
-        CVR-nummer: 81828384
-        Telefonnummer: +45 60708090 E-mail: info@divedeep.dk
-        © 2025 Dive Deep
+        <div style="position: absolute; left: 0; text-align : left; font-size:12px;">
+                Adresse: Dykkervej 10, 5000 Odense C
+                CVR-nummer: 81828384
+                Telefonnummer: +45 60708090 E-mail: info@divedeep.dk
+                © 2025 Dive Deep
+            
+                Åbningstider
+                Mandag-fredag: 10:00 - 17:30
+                Lørdag: 10:00 - 14:00
+                Søndag: Lukket
+        </div>
     </footer>
+
+    @RenderSection("Scripts", required: false)
+
+
 </body>
 </html>
