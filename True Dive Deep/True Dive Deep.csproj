@@ -8,9 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\Bookings\**" />
     <Compile Remove="Views\MyAccount\**" />
+    <Content Remove="Views\Bookings\**" />
     <Content Remove="Views\MyAccount\**" />
+    <EmbeddedResource Remove="Views\Bookings\**" />
     <EmbeddedResource Remove="Views\MyAccount\**" />
+    <None Remove="Views\Bookings\**" />
     <None Remove="Views\MyAccount\**" />
   </ItemGroup>
 
@@ -22,10 +26,6 @@
   <ItemGroup>
     <None Remove="Controllers\NewFile.txt" />
     <None Remove="Models\NewFile.txt" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Views\Bookings\" />
   </ItemGroup>
 
   <ItemGroup>

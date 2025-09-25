@@ -3,16 +3,21 @@
     .scubadiver {
         position: relative;
         width: 100%;
-        max-width: 900px;
-        margin: 0 auto 2rem auto;
+        margin: 0 0 2rem 0; 
+        border-radius: 25px;
+        overflow: hidden;
     }
 
     .scubaimage {
         width: 100%;
         height: 400px;
         object-fit: cover;
-        border-radius: 12px;
+       
         display: block;
+        filter: blur(2px) brightness(0.5);
+        transform: scale(1.05);
+       
+        background-image: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0));
     }
 
     .scubatext {
@@ -20,19 +25,17 @@
         top: 50%;
         left: 5%;
         transform: translateY(-50%);
-        background: rgba(0, 32, 64, 0.6);
         color: #fff;
         font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
         font-size: 1.2rem;
         max-width: 400px;
-        padding: 24px 28px;
-        border-radius: 12px;
-        box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        padding: 20px 24px;
         line-height: 1.6;
         letter-spacing: 0.01em;
+        text-shadow: 0 2px 8px rgba(0,0,0,0.5);
     }
 
-    /* Product card layout fra BCD-siden */
+
     .product-card {
         background: rgba(255,255,255,0.8);
         backdrop-filter: blur(10px);
@@ -44,6 +47,10 @@
         align-items: center;
         transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
+
+     .product-card.text{
+         color: black;
+     }
 
         .product-card:hover {
             transform: translateY(-6px);
@@ -63,6 +70,7 @@
         font-weight: 700;
         margin-bottom: 0.5rem;
         text-align: center;
+        color:black;
     }
 
     .product-description {
@@ -70,6 +78,7 @@
         opacity: 0.8;
         text-align: center;
         margin-bottom: 1rem;
+        color:black;
     }
 
     .price-tag {
@@ -110,15 +119,29 @@
         .btn-book:hover {
             background: #14b8a6;
         }
+
+
+        h1{
+        font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+        font-weight: 700;
+        letter-spacing: 1px;
+        line-height: 1.2;
+        color: black;
+           
+        }
+
+        h3{
+            color: black;
+        }
 </style>
 
 
 
 
-<h1>Velkommen til Deep Dive</h1>
+<h1>Velkommen til Deep Dive - Dyk ned i vores produkter</h1>
 
 <div class="scubadiver">
-    <img src="~/lib/Images/scubadiver.jpg" alt="frontpage image" class="scubaimage">
+    <img src="~/lib/Images/Diverhomepage.jpg" alt="frontpage image" class="scubaimage">
     <div class="scubatext">
         <p>
             Oplev en verden af spændende dykkeroplevelser med os!<br>
@@ -151,11 +174,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
 
     <div class="col-md-4 mb-4">
         <div class="product-card h-100">
