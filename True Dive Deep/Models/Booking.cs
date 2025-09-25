@@ -17,10 +17,10 @@ namespace True_Dive_Deep.Models
         [Required]
         [Display(Name = "Account")]
         public int AccountId { get; set; }
-
-       // [ValidateNever]
-        //[BindNever]
         public Account Account { get; set; } = null!;
+
+        [Timestamp]
+        public byte[]? Rowversion { get; set; }
 
     }
 }

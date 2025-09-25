@@ -137,31 +137,18 @@
             <h2 class="product-title">Navigator Lite BCD</h2>
             <p class="product-description">Perfekt til rekreative dykkere. Komfortabel og robust.</p>
             <p class="price-tag">💰125 DKK/pr.Dag</p>
-
-            <form action="/Cart/AddToCart" method="post">
-                <!-- hidden felter med de data din Cart har brug for -->
-                <input type="hidden" name="productId" value="1" />
-                <input type="hidden" name="productName" value="Navigator Lite BCD" />
-                <input type="hidden" name="brand" value="Scubapro" />
-                <input type="hidden" name="imageFileName" value="navigator lite blue.jpg" />
-                <input type="hidden" name="price" value="125" />
-
-                <!-- størrelse -->
-                <select name="size" class="Selected-size" required>
-                    <option value="">Vælg størrelse</option>
-                    <option value="S">S</option>
-                    <option value="M">M</option>
-                    <option value="L">L</option>
-                </select>
-
-                <!-- antal -->
-                <input type="number" name="quantity" value="1" min="1" class="form-control mt-2" />
-
-                <div class="actions mt-2">
-                    <a class="btn btn-info" href="#">Se Mere</a>
-                    <button type="submit" class="btn btn-primary">🛒 Tilføj til Kurv</button>
-                </div>
-            </form>
+            <select class="Selected-size" aria-label="Vælg størrelse" required>
+                <option selected>Vælg størrelse</option>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+            </select>
+            <div class="actions">
+               
+           
+                
+                <a class="btn btn-book btn btn-primary" href="#">🛒Tilføj til Kurv</a>
+            </div>
         </div>
     </div>
 
@@ -177,7 +164,7 @@
             <h2 class="product-title">E.Lite Plus Santi</h2>
             <p class="product-description">Tørdragt, Herre/Dame. Komfortabel og holdbar.</p>
             <p class="price-tag">💰350 DKK/pr.Dag</p>
-            <select class="Selected-size" aria-label="Vælg størrelse">
+            <select class="Selected-size" aria-label="Vælg størrelse" required>
                 <option selected>Vælg størrelse</option>
                 <option>XS</option>
                 <option>S</option>
@@ -202,7 +189,7 @@
             <h2 class="product-title">GO Travel Finner</h2>
             <p class="product-description">Finner til alle størrelser, let bevægelse under vandet.</p>
             <p class="price-tag">💰50 DKK/pr.Dag</p>
-            <select class="Selected-size" aria-label="Vælg størrelse">
+            <select class="Selected-size" aria-label="Vælg størrelse" required>
                 <option selected>Vælg størrelse</option>
                 <option>XS</option>
                 <option>S</option>

@@ -8,20 +8,29 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\MyAccount\**" />
+    <Content Remove="Views\MyAccount\**" />
+    <EmbeddedResource Remove="Views\MyAccount\**" />
+    <None Remove="Views\MyAccount\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Models\Equipment.cs" />
     <Compile Remove="Persistence\AccountInterface.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="Controllers\NewFile.txt" />
+    <None Remove="Models\NewFile.txt" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\MyAccount\" />
+    <Folder Include="Views\Bookings\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="ADO.Net.Client.Core" Version="1.4.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.20" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.9">
       <PrivateAssets>all</PrivateAssets>
@@ -33,6 +42,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="9.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
   </ItemGroup>
 
 </Project>
