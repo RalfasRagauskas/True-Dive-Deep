@@ -1,12 +1,14 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using True_Dive_Deep.Models;
 
 namespace True_Dive_Deep.Data
 {
-    public class TrueDiveDeepContext : DbContext
+    public class TrueDiveDeepContext : IdentityDbContext<Account, IdentityRole<int>, int>
     {
-
+       
         public DbSet<Booking> Bookings { get; set; } 
         public DbSet<Cart> Carts { get; set; }
         public DbSet<CartItem> CartItems { get; set; }
@@ -28,7 +30,7 @@ namespace True_Dive_Deep.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Cart>()
                 .HasMany(c => c.Items)
                 .WithOne(i => i.Cart)

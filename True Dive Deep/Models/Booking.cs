@@ -7,7 +7,7 @@ namespace True_Dive_Deep.Models
         public int BookingId { get; set; }
         [Required]
         
-        public string Title { get; set; }
+        public string? Title { get; set; }
 
         [Required]
         public DateTime StartTime { get; set; }

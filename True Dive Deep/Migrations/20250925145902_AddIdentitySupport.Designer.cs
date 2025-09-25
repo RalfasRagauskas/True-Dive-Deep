@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using True_Dive_Deep.Data;
 
@@ -11,9 +12,11 @@ using True_Dive_Deep.Data;
 namespace True_Dive_Deep.Migrations
 {
     [DbContext(typeof(TrueDiveDeepContext))]
-    partial class TrueDiveDeepContextModelSnapshot : ModelSnapshot
+    [Migration("20250925145902_AddIdentitySupport")]
+    partial class AddIdentitySupport
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
