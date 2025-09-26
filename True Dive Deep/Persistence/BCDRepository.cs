@@ -56,5 +56,15 @@ namespace True_Dive_Deep.Persistence
         }
 
         public static void Delete(int id) => BCDs.RemoveAll(b => b.ProductId == id);
+
+        internal static async Task<string?> GetAllASync()
+        {
+            throw new NotImplementedException();
+        }
+
+        internal static async Task<IEnumerable<object>> GetAllAsync()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

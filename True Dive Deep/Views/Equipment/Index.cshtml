@@ -3,22 +3,7 @@
 }
 
 <style>
-    .search-bar {
-        display: flex;
-        justify-content: flex-end;
-        margin: 1rem 0;
-    }
 
-        .search-bar input {
-            padding: 6px 10px;
-            border-radius: 20px;
-            border: none;
-            outline: none;
-        }
-
-    .filter {
-        margin-bottom: 1rem;
-    }
 
     .cards {
         display: grid;
@@ -75,27 +60,19 @@
         .btn-primary:hover {
             background: #14b8a6;
         }
+
+
+    h1 {
+        color: black;
+    }
 </style>
 
 
-<h1>Her kan du se vores udstyr til leje</h1>
+<h1>Her er vores forskellige kategorier af produkter til leje</h1>
 
 
-<div class="search-bar">
-    <img src="~/lib/Images/shopping-cart.png" alt="Cart" class="icon" style="margin-right: 10px;" width="40" height="40">
-    <input type="text" placeholder="Søg">
-</div>
 
 
-<div class="filter">
-    <label for="Sort">Sorter efter:</label>
-    <select name="sort" id="sort">
-        <option value="Newest">Nyeste</option>
-        <option value="Most popular">Populære</option>
-        <option value="Low-to-high">Billigst til dyrest</option>
-        <option value="High-to-low">Dyrest til billigst</option>
-    </select>
-</div>
 
 
 <div class="cards">

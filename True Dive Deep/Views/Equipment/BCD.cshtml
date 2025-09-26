@@ -19,8 +19,8 @@
                 <p class="price-tag">💰@bcd.PricePerDay DKK/pr.Dag</p>
 
 
-                <!--  -->
-                <form action="/Cart/AddToCart" method="post">
+                
+                <form id="AddToCart" action="/Cart/AddToCart" method="post">
            
                 <input type="hidden" name="productId" value="@bcd.ProductId" />
                 <input type="hidden" name="productName" value="@bcd.Model" />
@@ -38,9 +38,17 @@
 
                 <input type="number" name="quantity" value="1" min="1" class="form-control mt-2" />
 
-                    <button type="submit" class="btn btn-primary mt-2">🛒 Tilføj til Kurv</button>
+                    <button onclick="showMessage()" type="submit" class="btn btn-primary mt-2">🛒 Tilføj til Kurv</button>
                 </form>
+                <p id="successMessage" class="success-message">Produkt Er Tilføjet Til Kurv!</p>
            </div>
         </div>
     }
 </div>
+<script>
+    document.getElementById('AddToCart').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const successMessage = document.getElementById('successMessage');
+      successMessage.style.display = 'block';
+    });
+</script>

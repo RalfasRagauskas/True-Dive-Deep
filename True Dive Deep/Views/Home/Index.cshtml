@@ -1,4 +1,4 @@
-﻿
+﻿@using True_Dive_Deep.Persistence;
 <style>
     .scubadiver {
         position: relative;
@@ -160,18 +160,17 @@
             <h2 class="product-title">Navigator Lite BCD</h2>
             <p class="product-description">Perfekt til rekreative dykkere. Komfortabel og robust.</p>
             <p class="price-tag">💰125 DKK/pr.Dag</p>
-            <select class="Selected-size" aria-label="Vælg størrelse" required>
-                <option selected>Vælg størrelse</option>
-                <option>S</option>
-                <option>M</option>
-                <option>L</option>
-            </select>
-            <div class="actions">
-               
+            <form action="/Cart/AddToCart" method="post">
+                <select class="Selected-size" aria-label="Vælg størrelse" required>
+                    <option selected>Vælg størrelse</option>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                </select>
            
-                
-                <a class="btn btn-book btn btn-primary" href="#">🛒Tilføj til Kurv</a>
-            </div>
+                <input type="number" name="quantity" value="1" min="1" class="form-control mt-2" />
+                <button type="submit" class="btn btn-primary mt-2">🛒Tilføj til Kurv</button>
+            </form>
         </div>
     </div>
 
@@ -181,18 +180,20 @@
             <h2 class="product-title">E.Lite Plus Santi</h2>
             <p class="product-description">Tørdragt, Herre/Dame. Komfortabel og holdbar.</p>
             <p class="price-tag">💰350 DKK/pr.Dag</p>
-            <select class="Selected-size" aria-label="Vælg størrelse" required>
-                <option selected>Vælg størrelse</option>
-                <option>XS</option>
-                <option>S</option>
-                <option>M</option>
-                <option>L</option>
-                <option>XL</option>
-            </select>
-            <div class="actions">
-                <a class="btn btn-info"  href="#">Se Mere</a>
-                <a asp-controller="Bookings" asp-action="Add" class="btn btn-book btn btn-primary" href="#">🛒Tilføj til Kurv</a>
-            </div>
+            <form action="/Cart/AddToCart" method="post">
+                <select class="Selected-size" aria-label="Vælg størrelse" required>
+                    <option selected>Vælg størrelse</option>
+                    <option>XS</option>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                    <option>XL</option>
+                </select>
+            
+                <input type="number" name="quantity" value="1" min="1" class="form-control mt-2" />
+
+                <button type="submit" class="btn btn-primary mt-2">🛒Tilføj til Kurv</button>
+            </form>
         </div>
     </div>
 
@@ -206,19 +207,19 @@
             <h2 class="product-title">GO Travel Finner</h2>
             <p class="product-description">Finner til alle størrelser, let bevægelse under vandet.</p>
             <p class="price-tag">💰50 DKK/pr.Dag</p>
-            <select class="Selected-size" aria-label="Vælg størrelse" required>
-                <option selected>Vælg størrelse</option>
-                <option>XS</option>
-                <option>S</option>
-                <option>M</option>
-                <option>L</option>
-                <option>XL</option>
-            </select>
-            <div class="actions">
-                <a class="btn btn-info" href="#">Se Mere</a>
-                <a class="btn btn-book btn btn-primary" href="#">🛒Tilføj til Kurv</a>
-            </div>
+            <form action="/Cart/AddToCart" method="post">
+                <select class="Selected-size" aria-label="Vælg størrelse" required>
+                    <option selected>Vælg størrelse</option>
+                    <option>XS</option>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                    <option>XL</option>
+                </select>
+            
+                <input type="number" name="quantity" value="1" min="1" class="form-control mt-2" />
+                <button type="submit" class="btn btn-primary mt-2">🛒Tilføj til Kurv</button>
+            </form>
         </div>
     </div>
 </div>
-

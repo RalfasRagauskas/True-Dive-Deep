@@ -2,22 +2,77 @@
 @model True_Dive_Deep.Pages.Account.LoginModel
 @{
     ViewData["Title"] = "Log ind";
+    Layout = "_Layout";
 }
 
+<style>
+
+    .gradient-blue-btn {
+        background: linear-gradient(135deg, #4da6ff, #1a73e8);
+        color: white;
+        border: none;
+        border-radius: 30px;
+        font-weight: 600;
+        font-size: 15px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+        transition: all 0.3s ease;
+    }
+
+        .gradient-blue-btn:hover {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            color: #fff;
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+        }
+</style>
+
 <div class="container py-5">
-    <h2>Log Ind</h2>
-    <form method="post">
-        <div class="mb-3">
-            <label asp-for="Input.Email" class="form-label">Email</label>
-            <input asp-for="Input.Email" class="form-control" />
-            <span asp-validation-for="Input.Email" class="text-danger"></span>
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <div class="card shadow" style="border-radius: 15px;">
+                <div class="card-body p-5">
+                    <h2 class="text-center mb-5">Log Ind</h2>
+                    <form method="post">
+                        <div class="form-outline mb-4">
+                            <input asp-for="Input.Email" class="form-control" placeholder="Din email" />
+                            <label asp-for="Input.Email" class="form-label"></label>
+                            <span asp-validation-for="Input.Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-outline mb-4">
+                            <input asp-for="Input.Password" class="form-control" type="password" placeholder="Adgangskode" />
+                            <label asp-for="Input.Password" class="form-label"></label>
+                            <span asp-validation-for="Input.Password" class="text-danger"></span>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col d-flex justify-content-center">
+                                <div class="form-check d-flex align-items-center gap-2">
+                                    <input asp-for="Input.RememberMe" type="checkbox" class="form-check-input" style="width:28px;height:28px;" />
+                                    <label asp-for="Input.RememberMe" class="form-check-label" style="margin-bottom:0;cursor:pointer;">
+                                        <svg version="1.1" id="base" xmlns="http://www.w3.org/2000/svg" class="SVGIcon_Button SVGIcon_Check" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 256 256" stroke-width="35" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" style="vertical-align:middle;">
+                                            <polyline fill="none" points="49.5,147.75 95,210.75 206.5,45.25 "></polyline>
+                                        </svg>
+                                        Husk mig
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col text-end">
+                                <a href="#">Glemt adgangskode?</a>
+                            </div>
+                        </div>
+                        <button type="submit" class="gradient-blue-btn btn-block mb-4 w-100">Log Ind</button>
+                        <div class="text-center">
+                            <p>Ingen konto? <a href="/Account/Register">Opret Bruger</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="mb-3">
-            <label asp-for="Input.Password" class="form-label">Adgangskode</label>
-            <input asp-for="Input.Password" class="form-control" type="password" />
-            <span asp-validation-for="Input.Password" class="text-danger"></span>
-        </div>
-        <button type="submit" class="btn btn-primary w-100">Log Ind</button>
-    </form>
+    </div>
 </div>
 
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
