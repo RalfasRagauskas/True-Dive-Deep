@@ -16,7 +16,7 @@
                     </p>
                     <p class="price-tag">💰@tank.PricePerDay DKK/pr.Dag</p>
 
-                <form id="AddToCart" action="/Cart/AddToCart" method="post">
+                <form class="AddToCart" action="/Cart/AddToCart" method="post">
                     <input type="hidden" name="productId" value="@tank.ProductId" />
                     <input type="hidden" name="brand" value="@tank.Brand" />
                     <input type="hidden" name="imageFileName" value="@tank.ImageFileName" />
@@ -31,9 +31,34 @@
     }
 </div>
 <script>
-     document.getElementById('AddToCart').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const successMessage = document.getElementById('successMessage');
-      successMessage.style.display = 'block';
+    document.querySelectorAll(".AddToCart").forEach(form => {
+            form.addEventListener("submit", function(e) {
+                e.preventDefault();
+                const currentForm = this;
+                const formData = new FormData(currentForm);
+                const productId = formData.get("productId");
+            const succesMessage = document.getElementById(`successMessage-${productId}`);
+
+            fetch(currentForm.action, {
+                method: currentForm.method,
+                body: formData
+
+            })
+            .then(response => {
+                if (response.ok) {
+                    succesMessage.style.display = "block";
+                    setTimeout(() => {
+                        succesMessage.style.display = "none";
+                    }, 5000)
+               } else {
+
+                    console.error("Fejl ved tilføjelse til kurv. Serveren returnerede en fejl.");
+                }
+            })
+            .catch(error => {
+
+                console.error('Netværksfejl:', error);
+            });
+        });
     });
 </script>

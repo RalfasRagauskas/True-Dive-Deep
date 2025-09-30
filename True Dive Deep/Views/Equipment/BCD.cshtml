@@ -1,4 +1,5 @@
 ﻿@using True_Dive_Deep.Models
+@using True_Dive_Deep.Persistence;
 @model List<BCD>
 @addTagHelper *,Microsoft.Mvc.TagHelpers
 
@@ -20,7 +21,7 @@
 
 
                 
-                <form id="AddToCart" action="/Cart/AddToCart" method="post">
+                <form class="AddToCart" action="/Cart/AddToCart" method="post">
            
                 <input type="hidden" name="productId" value="@bcd.ProductId" />
                 <input type="hidden" name="productName" value="@bcd.Model" />
@@ -38,17 +39,44 @@
 
                 <input type="number" name="quantity" value="1" min="1" class="form-control mt-2" />
 
-                    <button onclick="showMessage()" type="submit" class="btn btn-primary mt-2">🛒 Tilføj til Kurv</button>
+                    <button type="submit" class="btn btn-primary mt-2">🛒 Tilføj til Kurv</button>
                 </form>
-                <p id="successMessage" class="success-message">Produkt Er Tilføjet Til Kurv!</p>
+               
+                <p id="successMessage-@bcd.ProductId" class="success-message" style="display: none;">Produkt Er Tilføjet Til Kurv!</p>
            </div>
         </div>
     }
 </div>
 <script>
-    document.getElementById('AddToCart').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const successMessage = document.getElementById('successMessage');
-      successMessage.style.display = 'block';
+  
+        document.querySelectorAll(".AddToCart").forEach(form => {
+            form.addEventListener("submit", function(e) {
+                e.preventDefault();
+                const currentForm = this;
+                const formData = new FormData(currentForm);
+                const productId = formData.get("productId");
+            const successMessage = document.getElementById(`successMessage-${productId}`);
+
+            fetch(currentForm.action, {
+                method: currentForm.method,
+                body: formData
+
+            })
+            .then(response => {
+                if (response.ok) {
+                    successMessage.style.display = "block";
+                    setTimeout(() => {
+                        successMessage.style.display = "none";
+                    }, 5000)
+               } else {
+                   
+                    console.error("Fejl ved tilføjelse til kurv. Serveren returnerede en fejl.");
+                }
+            })
+            .catch(error => {
+                
+                console.error('Netværksfejl:', error);
+            });
+        });
     });
 </script>
