@@ -42,6 +42,13 @@
                                 </div>
                             </div>
                             <hr />
+
+                            <form asp-action="RemoveFromCart" method="post" style="display:inline;">
+                                <input type="hidden" name="productId" value="@item.ProductId" />
+                                <input type="hidden" name="size" value="@(item.SelectedSize ?? "")" />
+                                <input type="hidden" name="gender" value="@(item.SelectedGender ?? "")" />  
+                                <button type="submit" class="btn btn-danger btn-sm">Fjern</button>
+                            </form>
                         }
                     </div>
                 </div>

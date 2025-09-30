@@ -41,5 +41,20 @@ namespace True_Dive_Deep.Controllers
             // gør at bruger ikke sendes til kurv side, men bliver på den nuværende side. 
             return Redirect(Request.Headers["Referer"].ToString());
         }
+
+        [HttpPost]
+        public IActionResult RemoveFromCart(int productId, string size, string gender)
+        {
+
+            var item = CartItems.FirstOrDefault(c =>
+                c.ProductId == productId &&
+                (string.IsNullOrEmpty(c.SelectedSize) ? string.IsNullOrEmpty(size) : c.SelectedSize == size)
+            );
+            if (item != null)
+                CartItems.Remove(item);
+            return RedirectToAction("Index");
+
+        }
+
     }
 }
