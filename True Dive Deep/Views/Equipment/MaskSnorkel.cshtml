@@ -1,4 +1,5 @@
 ﻿@using True_Dive_Deep.Models
+@using True_Dive_Deep.Persistence
 @model List<Mask_Snorkel>
 @{
     Layout = "~/Views/Shared/_ProductsLayout.cshtml";
@@ -14,18 +15,19 @@
                     <p class="product-description"> </p>
                     <p class="price-tag">💰@mask_snorkel.PricePerDay DKK/pr.Dag</p>
 
+                <p>DEBUG ID: @mask_snorkel.ProductId</p>
+
                 <form class="AddToCart" action="/Cart/AddToCart" method="post">
                     <input type="hidden" name="productId" value="@mask_snorkel.ProductId" />
                     <input type="hidden" name="productName" value="@mask_snorkel.Model" />
                     <input type="hidden" name="brand" value="@mask_snorkel.Brand" />
                     <input type="hidden" name="imageFileName" value="@mask_snorkel.ImageFileName" />
                     <input type="hidden" name="price" value="@mask_snorkel.PricePerDay" />
+                    <input type="number" name="quantity" value="1" min="1" class="form-control mt-2" />
 
-                    <input type="number" name="quantity" value="1" min="1" class="form-control mb-2" />
-
-                    <button type="submit" class="btn btn-primary">🛒 Tilføj til Kurv</button>
+                    <button type="submit" class="btn btn-primary mt-2">🛒 Tilføj til Kurv</button>
                 </form>
-                <p id="successMessage" class="success-message">Produkt Er Tilføjet Til Kurv!</p>
+                <p id="successMessage-@mask_snorkel.ProductId" class="success-message" style="display: none;">Produkt Er Tilføjet Til Kurv!</p>
             </div>
         </div>
     }
@@ -37,7 +39,7 @@
                   const currentForm = this;
                   const formData = new FormData(currentForm);
                   const productId = formData.get("productId");
-              const succesMessage = document.getElementById(`successMessage-${productId}`);
+              const successMessage = document.getElementById(`successMessage-${productId}`);
 
               fetch(currentForm.action, {
                   method: currentForm.method,
@@ -46,9 +48,9 @@
               })
               .then(response => {
                   if (response.ok) {
-                      succesMessage.style.display = "block";
+                      successMessage.style.display = "block";
                       setTimeout(() => {
-                          succesMessage.style.display = "none";
+                          successMessage.style.display = "none";
                       }, 5000)
                  } else {
 

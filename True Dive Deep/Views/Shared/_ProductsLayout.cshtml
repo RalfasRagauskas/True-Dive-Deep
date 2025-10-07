@@ -153,30 +153,32 @@
 
     <div class="row">
         <div class="col-md-6"></div>
-        <form class="d-flex" asp-action"Index" asp-controller="EquipmentController">
+        <form class="d-flex" asp-action="Index" asp-controller="Equipment">
         <input name="searchString" class="form-control me-1" type="search" placeholder="Search" aria-label="Search"/>
         <button class="btn btn-dark" type="submit">Søg efter produkt</button>
         </form>
 
     <div class="col-md-6"></div>
+
         
     </div>
 
-
-
-
-    <div class="filtersearch"> 
-    <div class="search-bar">
-    <img src="~/lib/Images/shopping-cart.png" alt="Cart" class="icon" style="margin-right: 10px;" width="40" height="40">
-    <input type="text" placeholder="Søg">
     <div class="filter">
     <label for="sort">Sorter efter:</label>
-    <select name="sort" id="sort">
+    <div class="col-md-3">
+        <select name="category" class="form-control">
+            <option value="Most Popular">Populære</option>
+            <option value="Low-To-High">Billigst til dyrest</option>
+            <option value="High-To-Low">Dyrest til billigst</option>
+        </select>
+    </div>
+
+    @* <select name="sort" id="sort">
         <option value="Newest">Nyeste</option>
         <option value="Most popular">Populære</option>
         <option value="Low-to-high">Billigst til dyrest</option>
         <option value="High-to-low">Dyrest til billigst</option>
-    </select>
+    </select> *@
    </div>
  </div>
 </div>

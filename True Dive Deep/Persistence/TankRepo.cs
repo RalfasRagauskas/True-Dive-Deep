@@ -8,26 +8,26 @@ namespace True_Dive_Deep.Persistence
         {
             new Tank 
             {
-                Brand = "Scubapro",
+                Brand = "Scubapro - Volume 5",
                 Volume = 5,
                 PricePerDay = 150,
-                ImageFileName = ""
+                ImageFileName = "Tanks.jpg"
             },
     
             new Tank 
             { 
-                Brand = "Scubapro",
+                Brand = "Scubapro - Volume 10",
                 Volume = 10,
                 PricePerDay = 160,
-                ImageFileName = ""
+                ImageFileName = "Tanks.jpg"
             },
     
             new Tank 
             { 
-                Brand = "Scubapro",
+                Brand = "Scubapro - Volume 12",
                 Volume = 12,
                 PricePerDay = 170,
-                ImageFileName = ""
+                ImageFileName = "Tanks.jpg"
             },
     
             new Tank 
@@ -35,7 +35,7 @@ namespace True_Dive_Deep.Persistence
                 Brand = "Scubapro",
                 Volume = 15,
                 PricePerDay = 180,
-                ImageFileName = ""
+                ImageFileName = "Tanks.jpg"
             }
         };
         public static List<Tank> GetAll()

@@ -12,7 +12,7 @@
 
                     <h2 class="product-title">@tank.Brand</h2>
                     <p class="product-description">
-                        Volumen: @tank.Volume Liter
+                        Volumen: @tank.Volume
                     </p>
                     <p class="price-tag">💰@tank.PricePerDay DKK/pr.Dag</p>
 
@@ -23,7 +23,7 @@
                     <input type="hidden" name="price" value="@tank.PricePerDay" />
                     <input type="number" name="quantity" value="1" min="1" class="form-control mb-2" />
 
-                    <button onclick="showMessage()" type="submit" class="btn btn-primary">🛒 Tilføj til Kurv</button>
+                    <button type="submit" class="btn btn-primary">🛒 Tilføj til Kurv</button>
                 </form>
                 <p id="successMessage" class="success-message">Produkt Er Tilføjet Til Kurv!</p>
             </div>

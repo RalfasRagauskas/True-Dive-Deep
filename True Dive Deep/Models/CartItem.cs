@@ -12,7 +12,7 @@
         public Product Product { get; set; } // nav property
 
 
-        public string ProductName { get; set; }   
+        public string ProductName { get; set; }  
         public string Brand { get; set; }        
         public string ImageFileName { get; set; } 
         public decimal PricePerDay { get; set; }  

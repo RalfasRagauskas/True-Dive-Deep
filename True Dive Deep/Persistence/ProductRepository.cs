@@ -21,15 +21,5 @@ namespace True_Dive_Deep.Persistence
             return Products;
         }
 
-        public static Product? GetById(int id) => Products.Find(b => b.ProductId == id);
-
-        public static void Add(BCD bcd)
-        {
-            if (bcd == null) return;
-            bcd.ProductId = Products.Count > 0 ? Products[^1].ProductId + 1 : 1;
-            Products.Add(bcd);
-        }
-
-        public static void Delete(int id) => Products.RemoveAll(b => b.ProductId == id);
     }
 }

@@ -19,7 +19,7 @@ namespace True_Dive_Deep.Controllers
         public IActionResult AddToCart(int productId, string productName, string brand, string imageFileName, decimal price, string size = null, string gender = null, int quantity = 1)
         {
             // Tjek om item allerede findes
-            var existingItem = CartItems.FirstOrDefault(c => c.ProductId == productId && c.SelectedSize == size && c.SelectedGender == gender);
+            var existingItem = CartItems.FirstOrDefault(c => c.ProductId == productId && c.ProductName == productName && c.Brand == brand && c.SelectedSize == size && c.SelectedGender == gender);
             if (existingItem != null)
             {
                 existingItem.Quantity += quantity;
@@ -43,7 +43,7 @@ namespace True_Dive_Deep.Controllers
         }
 
         [HttpPost]
-        public IActionResult RemoveFromCart(int productId, string size, string gender)
+        public IActionResult RemoveFromCart(int productId, string productName, string brand, string imageFileName, decimal price, string size = null, string gender = null, int quantity = 1)
         {
 
             var item = CartItems.FirstOrDefault(c =>

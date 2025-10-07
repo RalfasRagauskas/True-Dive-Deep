@@ -48,27 +48,6 @@ namespace True_Dive_Deep.Controllers
             ViewBag.Action = "Tank";
             return View(tanks);
         }
-
-
-        //public async Task<IActionResult> Index(string searchString)
-        //{
-        //    // Hent alle udstyr asynkront
-        //    var bcd = await BCDRepository.GetAllAsync();
-
-        //    // Hvis der er et søgeord, filtrer listen
-        //    if (!string.IsNullOrEmpty(searchString))
-        //    {
-        //        bcd = bcd
-        //            .Where(n => n.Brand.Contains(searchString, StringComparison.OrdinalIgnoreCase)
-        //                     || n.Model.Contains(searchString, StringComparison.OrdinalIgnoreCase))
-        //            .ToList();
-        //    }
-
-        //    // Returner view med udstyr som model
-        //    return View(bcd);
-        //}
-
-
     }
 }
 

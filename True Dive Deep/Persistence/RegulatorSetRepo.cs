@@ -9,7 +9,7 @@ namespace True_Dive_Deep.Persistence
             new RegulatorSet
             {
              
-                Brand = "Scubapro",
+                Brand = "Scubapro - R105",
                 StepOne = "MK25EVO",
                 StepTwo = "S600",
                 Octopus = "R105",
@@ -19,7 +19,7 @@ namespace True_Dive_Deep.Persistence
             new RegulatorSet
             {
                
-                Brand = "Scubapro",
+                Brand = "Scubapro - R095",
                 StepOne = "MK17EVO",
                 StepTwo = "C370",
                 Octopus = "R095",
@@ -29,7 +29,7 @@ namespace True_Dive_Deep.Persistence
             new RegulatorSet
             {
                 
-                Brand = "Scubapro",
+                Brand = "Scubapro - S270",
                 StepOne = "MK25EVO BT",
                 StepTwo = "A700 Carbon BT",
                 Octopus = "S270",
