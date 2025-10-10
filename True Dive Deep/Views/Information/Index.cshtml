@@ -85,8 +85,16 @@
         background-color: darkslategrey;
    }
 
-
-
+    .success-alert {
+        padding: 15px;
+        margin-bottom: 20px;
+        border: 1px solid #4CAF50; 
+        border-radius: 5px;
+        background-color: #d4edda; 
+        color: #155724;
+        font-weight: bold;
+        text-align: center;
+    }
 </style>
 
 <div class="container information-page">
@@ -109,12 +117,9 @@
     </section>
 </div>
 
-
-
-
 <div class="container-Write-Message">
     <h5>Skriv en besked til os her!</h5>
-    <form action="#">
+    <form id="contactForm" action="/Information/SendMessage" method="post">
         <label for="fname">Fornavn</label>
         <input type="text" id="fname" name="firstname" placeholder="Dit fornavn..">
 
@@ -122,17 +127,62 @@
         <input type="text" id="lname" name="lastname" placeholder="Dit efternavn..">
 
         <label for="PhoneNumber">Telefon</label>
-        <input type="text" id="PhoneNumber" placeholder="">
+        <input type="text" id="PhoneNumber" name="phonenumber" placeholder="Dit telefonnummer..">
 
         <label for="country">Country</label>
         <select id="country" name="country">
-            <option value="australia">Danmark</option>
-           
+            <option value="danmark">Danmark</option>
         </select>
 
         <label for="subject">Emne</label>
         <textarea id="subject" name="subject" placeholder="Skriv her.." style="height:200px"></textarea>
 
+        <div id="successMessage" style="display: none;" class="success-alert mt-3">
+            ✅ Tak for din besked! Vi vender tilbage hurtigst muligt.
+        </div>
+
         <input type="submit" value="Indsend">
     </form>
 </div>
+<script>
+    // Sikrer, at scriptet kører, når DOM'en er indlæst
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('contactForm');
+        const messageDiv = document.getElementById('successMessage');
+        const submitButton = form.querySelector('input[type="submit"]');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Forhindrer standard genindsendelse af siden
+
+            submitButton.value = "Sender...";
+            submitButton.disabled = true;
+
+            const formData = new FormData(form);
+
+            // Fetch sender dataen til din Controller metode: /Information/SendMessage
+            fetch(form.action, {
+                method: form.method,
+                body: formData
+            })
+            .then(response => {
+                // Tjekker om statuskoden er 200 (OK)
+                if (response.ok) {
+                    form.style.display = 'none'; // Skjul formularen
+                    messageDiv.style.display = 'block'; // Vis succesbeskeden
+                } else {
+                    // Hvis der er en fejl fra serveren (f.eks. BadRequest)
+                    alert("Der opstod en fejl under afsendelsen. Prøv igen.");
+                    submitButton.value = "Indsend";
+                    submitButton.disabled = false;
+                }
+            })
+            .catch(error => {
+                // Håndterer netværksfejl
+                console.error('Netværksfejl:', error);
+                alert("Kunne ikke oprette forbindelse. Tjek din internetforbindelse.");
+                submitButton.value = "Indsend";
+                submitButton.disabled = false;
+            });
+        });
+    });
+</script>

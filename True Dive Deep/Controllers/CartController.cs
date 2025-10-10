@@ -7,7 +7,7 @@ namespace True_Dive_Deep.Controllers
     public class CartController : Controller
     {
         // Midlertidig kurv, statisk liste
-        private static List<CartItem> CartItems = new List<CartItem>();
+        public static List<CartItem> CartItems = new List<CartItem>();
 
         public IActionResult Index()
         {

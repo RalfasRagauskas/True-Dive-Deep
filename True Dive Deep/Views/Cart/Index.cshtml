@@ -62,18 +62,20 @@
                     <div class="card-body">
                         <p><strong>Total amount:</strong> <span id="totalPrice"> @Model.Sum(i => i.PricePerDay * i.Quantity)</span> DKK</p>
                     </div>
-                    <form id="dateform">
-                        <ul>
-                            <label for="start">StartDato:</label>
-                            <li><input type="date" id="start" name="start" required /></li>
-
-                            <label for="slut">SlutDato:</label>
-                            <li><input type="date" id="slut" name="slut" required /></li>
-                        </ul>
-                    </form>
                 </div>
+                <form class="AddBooking" action="/Booking/AddBooking" method="post">
+                    <div class="mb-3">
+                        <label for="startDate" class="form-label">Startdato:</label>
+                        <input type="date" id="startDate" name="startDate" class="form-control" required />
+                    </div>
 
-                <button class="btn btn-primary btn-lg btn-block">Betal her</button>
+                    <div class="mb-3">
+                        <label for="endDate" class="form-label">Slutdato:</label>
+                        <input type="date" id="endDate" name="endDate" class="form-control" required />
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Book her!</button>
+                </form>
             </div>
         </div>
     </div>
@@ -83,12 +85,13 @@
     <script>
         // Læs varerne fra Razor til JS som array af objekter
         const cartItems = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(
-                    Model.Select(i => new { i.PricePerDay, i.Quantity })
-            ));
+           Model.Select(i => new { i.PricePerDay, i.Quantity })
+        ));
 
-    const startInput = document.getElementById('start');
-    const slutInput = document.getElementById('slut');
-    const totalPriceElem = document.getElementById('totalPrice');
+        // Brug de korrekte id'er fra input felterne
+        const startInput = document.getElementById('startDate');
+        const endInput = document.getElementById('endDate');
+        const totalPriceElem = document.getElementById('totalPrice');
 
         function calculateDays(start, end) {
             const diffTime = end.getTime() - start.getTime();
@@ -98,22 +101,22 @@
 
         function updateTotalPrice() {
             const startDateValue = startInput.value;
-            const slutDateValue = slutInput.value;
+            const endDateValue = endInput.value;
 
-            if (!startDateValue || !slutDateValue) {
+            if (!startDateValue || !endDateValue) {
                 totalPriceElem.textContent = '0';
                 return;
             }
 
             const startDate = new Date(startDateValue);
-            const slutDate = new Date(slutDateValue);
+            const endDate = new Date(endDateValue);
 
-            if (slutDate < startDate) {
+            if (endDate < startDate) {
                 totalPriceElem.textContent = '0';
                 return;
             }
 
-            const days = calculateDays(startDate, slutDate);
+            const days = calculateDays(startDate, endDate);
 
             let total = 0;
             cartItems.forEach(item => {
@@ -124,7 +127,7 @@
         }
 
         startInput.addEventListener('change', updateTotalPrice);
-        slutInput.addEventListener('change', updateTotalPrice);
+        endInput.addEventListener('change', updateTotalPrice);
 
         // Initial opdatering, hvis datoer allerede er udfyldt
         updateTotalPrice();

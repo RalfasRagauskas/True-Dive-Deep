@@ -1,0 +1,97 @@
+﻿@model List<True_Dive_Deep.Models.Booking>
+@{
+    ViewData["Title"] = "Booking";
+}
+<style>
+.red-button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .red-button:hover {
+            background-color: darkred;
+        }
+
+    .green-button {
+        background-color: green;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+        .red-button:hover {
+            background-color: darkgreen;
+        }
+</style>
+<h2 class="mb-4">Din Booking</h2>
+
+<section class="h-100 gradient-custom">
+    <div class="container py-5">
+        <div class="row d-flex justify-content-center my-4">
+            <div class="col-md-8">
+                <div class="card mb-4">
+                    <div class="card-header py-3">
+                        <h5 class="mb-0">Se Bookinger</h5>
+                    @foreach (var booking in Model)
+                    {
+                        <div class="card mb-4 p-3">
+                            <p><strong>Booking ID:</strong> @booking.BookingId</p>
+                            <p><strong>Startdato:</strong> @booking.StartDate.ToShortDateString()</p>
+                            <p><strong>Slutdato:</strong> @booking.EndDate.ToShortDateString()</p>
+                            <p><strong>Samlet pris:</strong> @booking.TotalPrice DKK</p>
+
+                            <h5>Produkter (@booking.Items.Count)</h5>
+                            </div> @foreach (var item in booking.Items)
+                             {
+                                <div class="row mb-2">
+                                    <div class="col-md-3">
+                                         <img src="~/lib/images/@item.ImageFileName" class="w-100 rounded" alt="@item.ProductName" />
+                                    </div>
+                                    <div class="col-md-9">
+                                        <p><strong>@item.ProductName</strong></p>
+                                        <p>Brand: @item.Brand</p>
+                                        @if (!string.IsNullOrEmpty(item.SelectedSize))
+                                        {
+                                          <p>Størrelse: @item.SelectedSize</p>
+                                        }
+                                        @if (!string.IsNullOrEmpty(item.SelectedGender))
+                                        {
+                                            <p>Køn: @item.SelectedGender</p>
+                                        }
+                                        <p>Mængde: @item.Quantity</p>
+                                        <p><strong>@item.PricePerDay DKK/dag</strong></p>
+                                    </div>
+                                </div>
+                             }
+                        <form class="DeleteBooking" action="/Booking/DeleteBooking" method="post" style="display:inline;">
+                            <input type="hidden" name="bookingId" value="@booking.BookingId" />
+                            <button type="submit" class="red-button btn btn-danger btn-sm">Fjern Booking!</button>
+                        </form>
+                        <form class="UpdateBooking" action="/Booking/UpdateBooking" method="post" style="display:inline;">
+                                <input type="hidden" name="bookingId" value="@booking.BookingId" />
+
+                                <div class="mb-2">
+                                    <label for="newStart-@booking.BookingId">Startdato:</label>
+                                    <input type="date" id="newStart-@booking.BookingId" name="newStartDate" value="@booking.StartDate.ToString("yyyy-MM-dd")" class="form-control" required />
+                                </div>
+
+                                <div class="mb-2">
+                                    <label for="newEnd-@booking.BookingId">Slutdato:</label>
+                                    <input type="date" id="newEnd-@booking.BookingId" name="newEndDate" value="@booking.EndDate.ToString("yyyy-MM-dd")" class="form-control" required />
+                                </div>                  
+                            <button type="submit" class="btn btn-danger btn-sm">Rediger Booking!</button>
+                        </form>
+                        }
+                </div> 
+            </div>
+        </div>
+    </div>
+</section>

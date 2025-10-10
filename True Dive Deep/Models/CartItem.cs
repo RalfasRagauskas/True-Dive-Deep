@@ -18,6 +18,8 @@
         public decimal PricePerDay { get; set; }  
         public string SelectedSize { get; set; }  
         public string SelectedGender { get; set; }
-        public int Quantity { get; set; }
+        public int Quantity { get; set; } = 1;
+        public DateTime StartDato { get; set; }
+        public DateTime SlutDato { get; set; }
     }
 }
